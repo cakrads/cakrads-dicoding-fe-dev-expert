@@ -20,7 +20,7 @@ body {
   color: $black;
   font-family: "Poppins", sans-serif;
   font-size: $text-base;
-  background-color: #FFF5EC;
+  background-color: $cream-500;
 }
 
 img {
@@ -58,19 +58,19 @@ button:hover {
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
-.btn-red {
+.bg-red {
   color: $white;
   background-color: $red-500;
 }
-.btn-red:hover {
+.bg-red:hover {
   background-color: $red-700;
 }
-.btn-purple {
+.bg-purple {
   color: $white;
   background-color: $purple-500;
 }
-.btn-purple:hover {
-  background-color: $red-700;
+.bg-purple:hover {
+  background-color: $purple-700;
 }
 
 /*
@@ -102,7 +102,7 @@ p {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  background-color: #fff;
+  background-color: $white;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   z-index: 5;
   min-height: 65px;
@@ -124,6 +124,7 @@ p {
     color: $red-500;
     font-weight: 700;
     margin-left: 8px;
+    margin-bottom: 0px;
   }
 
   nav {
@@ -159,7 +160,6 @@ p {
   background-color: $gray-500;
   background-size: cover;
   position: relative;
-  margin-bottom: 32px;
 
   .hero__bg {
     position: absolute;
@@ -191,7 +191,9 @@ p {
 }
 
 .headline {
-  margin-bottom: 32px;
+  padding: 40px 0px;
+  margin-bottom: 70px;
+  background-color: $cream-700;
 
   figure {
     margin-bottom: 16px;
@@ -204,7 +206,7 @@ p {
 
     figcaption {
       text-align: center;
-      color: #666666;
+      color: $gray-500;
       font-size: $text-sm;
       font-weight: 400;
     }
@@ -218,6 +220,119 @@ p {
 
 }
 
+.restaurants {
+  margin-bottom: 40px;
+  
+  h2 {
+    font-size: $text-xl;
+    text-align: center;
+  }
+
+  p.desc {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .resto-data {
+    display: grid;
+    grid-row-gap: 16px;
+
+    .resto-item {
+      border-radius: $radius-lg;
+      background-color: $white;
+      overflow: hidden;
+      position: relative;
+    
+      .item-body {
+        padding: 0px 16px 16px;
+  
+        .title {
+          display: flex;
+          justify-content: space-between;
+          font-size: $text-lg;
+
+          h3 a {
+            text-decoration: none;
+            font-weight: 500;
+          }
+
+          .rating {
+            color: $red-500;
+            font-weight: 700;
+            min-width: 70px;
+            margin-left: 8px;
+            text-align: right;
+            padding-top: 3px;
+          }
+        }
+    
+        p {
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+      }
+
+      .badge {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        min-width: 70px;
+        padding: 8px 16px;
+        font-size: $text-sm;
+        font-weight: 700;
+        line-height: 1;
+        text-align: center;
+        border-radius: $radius-lg;
+      }
+  
+    }
+
+  }
+
+  figure {
+    overflow: hidden;
+    margin-bottom: 16px;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+footer {
+  padding: 32px 0px 16px;
+  color: $gray-500;
+  background-color: $cream-700;
+  
+  .container {
+    min-height: 50px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+
+    .link {
+      margin-bottom: 32px;
+
+      a {
+        padding: 8px 16px;
+        display: inline-block;
+        text-decoration: none;
+      }
+    }
+    
+    .license {
+      padding-top: 16px;
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
 
 .full-overlay {
   display: none;
