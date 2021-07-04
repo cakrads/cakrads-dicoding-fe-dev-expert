@@ -81,7 +81,7 @@ p {
   }
 
   h1 {
-    font-size: 4em;
+    font-size: $text-5xl;
     color: $red-500;
     font-weight: 700;
     margin-left: 8px;
@@ -101,10 +101,7 @@ p {
           display: inline-block;
           padding: 1.3em 2em;
           text-decoration: none;
-        }
-
-        a:hover {
-          text-decoration: underline;
+          font-weight: bold;
         }
       }
     }

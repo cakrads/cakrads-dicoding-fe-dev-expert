@@ -1,5 +1,5 @@
 @import './colors.scss';
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 650px) {
 
   header {
     .container {
@@ -35,14 +35,17 @@
       ul {
         list-style-type: none;
         padding: 0;
+        border-top: 1px solid $gray-300;
+
+
+        li {
+          display: list-item;
+          border-bottom: 1px solid $gray-300;
+          width: 100%;
+          text-align: left;
+        }
       }
 
-      li {
-        display: list-item;
-        border-bottom: 1px solid #E0E0E0;
-        width: 100%;
-        text-align: left;
-      }
     }
   
     nav.open {
@@ -53,6 +56,17 @@
   }
 }
 
+@media screen and (min-width: 651px) and (max-width: 900px) {
+
+  header {
+    .container {
+      h1 {
+        font-size: $text-4xl;
+      }
+    }
+  }
+
+}
 
 .full-overlay {
   display: none;
