@@ -48,9 +48,9 @@ button:hover {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  border: 1px solid transparent;
+  border: $radius-sm solid transparent;
   padding: .375rem .75rem;
-  font-size: 1rem;
+  font-size: $text-base;
   line-height: 1.5;
   border-radius: .25rem;
   min-width: 44px;
@@ -58,13 +58,19 @@ button:hover {
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
-.btn-link {
-  font-weight: 400;
-  color: $purple-500;
-  background-color: transparent;
+.btn-red {
+  color: $white;
+  background-color: $red-500;
 }
-.btn-link:hover {
-  color: $purple-700;
+.btn-red:hover {
+  background-color: $red-700;
+}
+.btn-purple {
+  color: $white;
+  background-color: $purple-500;
+}
+.btn-purple:hover {
+  background-color: $red-700;
 }
 
 /*
@@ -73,7 +79,10 @@ button:hover {
  */
 h1, h2, h3, h4, h5 {
   color: $purple-500;
+  text-transform: capitalize;
+  margin-bottom: 8px;
 }
+
 a {
   color: $purple-500;
 }
@@ -162,12 +171,12 @@ p {
   .hero__inner {
     margin: 0 auto;
     max-width: 800px;
-    padding:0px 2rem;
+    padding:0px 1rem;
     z-index: 1;
   
     h1 {
       font-weight: 500;
-      font-size: $text-5xl;
+      font-size: $text-4xl;
       color: $white;
       margin-bottom: 24px;
       line-height: 65px;
@@ -175,10 +184,56 @@ p {
     
     p {
       color: $purple-500;
-      font-size: $text-lg;
+      font-size: $text-base;
       color: $white;
     }
   }
+}
+
+.headline {
+  margin-bottom: 32px;
+
+  figure {
+    margin-bottom: 16px;
+
+    img {
+      width: 100%;
+      margin-bottom: 8px;
+      border-radius: $radius-lg;
+    }
+
+    figcaption {
+      text-align: center;
+      color: #666666;
+      font-size: $text-sm;
+      font-weight: 400;
+    }
+  }
+
+  .headline__content {
+    p {
+      margin-bottom: 16px;
+    }
+  }
+
+}
+
+
+.full-overlay {
+  display: none;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition-property: opacity;
+}
+
+.full-overlay.open {
+  display: block;
 }
 
 @import './responsive.scss';
