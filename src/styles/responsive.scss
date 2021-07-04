@@ -68,6 +68,24 @@
 
 }
 
+@media screen and (max-width:499px) {
+  .hero {
+    
+    .hero__inner {
+      padding:0px 1rem;
+
+      h1 {
+        font-size: $text-4xl;
+      }
+      
+      p {
+        font-size: $text-medium;
+      }
+    }
+
+  }
+}
+
 .full-overlay {
   display: none;
   width: 100%;

@@ -1,5 +1,7 @@
 import DATA from './../DATA.json';
 
+const restaurantsElement = document.querySelector('#resto-data');
+
 function _renderRestaurants() {
   const restaurants = { ...DATA };
   const menuItem = restaurants.restaurants.map((item) => {

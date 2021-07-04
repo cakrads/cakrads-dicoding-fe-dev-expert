@@ -1,6 +1,5 @@
 
 const btnMenu = document.querySelector('#btn-menu');
-const restaurantsElement = document.querySelector('#restaurants');
 const fullOverlay = document.querySelector('#full-overlay');
 
 btnMenu.addEventListener('click', function (event) {

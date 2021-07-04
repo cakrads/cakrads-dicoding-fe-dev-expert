@@ -37,6 +37,36 @@ button:hover {
   margin: 0 auto;
 }
 
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  min-width: 44px;
+  min-height: 44px;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn-link {
+  font-weight: 400;
+  color: $purple-500;
+  background-color: transparent;
+}
+.btn-link:hover {
+  color: $purple-700;
+}
+
 /*
  * Typograph
  *
@@ -109,34 +139,46 @@ p {
   
 }
 
-.btn {
-  display: inline-block;
-  font-weight: 400;
+.hero {
+  display: flex;
+  align-items: center;
+  min-height: 400px;
+  width: 100%;
   text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  border: 1px solid transparent;
-  padding: .375rem .75rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  border-radius: .25rem;
-  min-width: 44px;
-  min-height: 44px;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-}
+  background-image: url("../public/images/heros/hero-image_2.jpg");
+  background-position: center;
+  background-color: $gray-500;
+  background-size: cover;
+  position: relative;
+  margin-bottom: 32px;
 
-.btn-link {
-  font-weight: 400;
-  color: $purple-500;
-  background-color: transparent;
-}
-.btn-link:hover {
-  color: $purple-700;
-}
+  .hero__bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
 
+  .hero__inner {
+    margin: 0 auto;
+    max-width: 800px;
+    padding:0px 2rem;
+    z-index: 1;
+  
+    h1 {
+      font-weight: 500;
+      font-size: $text-5xl;
+      color: $white;
+      margin-bottom: 24px;
+      line-height: 65px;
+    }
+    
+    p {
+      color: $purple-500;
+      font-size: $text-lg;
+      color: $white;
+    }
+  }
+}
 
 @import './responsive.scss';
