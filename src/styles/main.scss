@@ -1,10 +1,145 @@
-$black: #000000;
-$white: #ffffff;
+@import './colors.scss';
+/*
+ * Globally
+ *
+ */
+
+ * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
 
 body {
   color: $black;
+  font-family: "Poppins", sans-serif;
+  font-size: $text-base;
+  background-color: #FFF5EC;
 }
 
 img {
   display: block;
 }
+
+button:hover {
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0px 15px;
+  margin: 0 auto;
+}
+
+/*
+ * Typograph
+ *
+ */
+h1, h2, h3, h4, h5 {
+  color: $purple-500;
+}
+a {
+  color: $purple-500;
+}
+a:hover {
+  color: $purple-300;
+}
+
+p {
+  color: $gray-500;
+}
+
+/*
+ * Header and Nav
+ *
+ */
+ header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  z-index: 5;
+  min-height: 65px;
+   
+  .container {
+    min-height: 4rem;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+  }
+   
+  .btn-menu {
+    display: none;
+  }
+
+  h1 {
+    font-size: 4em;
+    color: $red-500;
+    font-weight: 700;
+    margin-left: 8px;
+  }
+
+  nav {
+    ul {
+      margin: 0;
+      
+      li {
+        display: inline-block;
+        text-align: center;
+        line-height: 24px;
+        text-transform: uppercase;
+
+        a {
+          display: inline-block;
+          padding: 1.3em 2em;
+          text-decoration: none;
+        }
+
+        a:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  min-width: 44px;
+  min-height: 44px;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn-link {
+  font-weight: 400;
+  color: $purple-500;
+  background-color: transparent;
+}
+.btn-link:hover {
+  color: $purple-700;
+}
+
+
+@import './responsive.scss';
