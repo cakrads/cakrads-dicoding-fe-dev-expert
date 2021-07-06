@@ -12,13 +12,20 @@
 </head>
 
 <body>
+  <a href="#maincontent" class="skip-link">Menuju ke konten</a>
   <header>
     <div class="container">
       <button id="btn-menu" class="btn btn-menu" href="#">☰</button>
-      <h1>Hangout</h1>
+      <a href="/" title="OVERANT - Discover Restaurant">
+        <picture>
+          <source srcset="./images/logo.webp" type="image/webp">
+          <source srcset="images/logo.png" type="image/png">
+          <img src="./public/images/logo.webp" alt="OVERANT - Discover Restaurant">
+        </picture>
+      </a>
       <nav id="drawer">
         <ul>
-          <li><a href="#">Home</a></li>
+          <li><a href="/">Home</a></li>
           <li><a href="#">Favorite</a></li>
           <li><a href="https://github.com/cakrads" target="_blank">About Us</a></li>
         </ul>
@@ -29,8 +36,8 @@
   <div class="hero">
     <div class="hero__bg"></div>
     <div class="hero__inner">
-      <h1>Restaurant Apps Starter Project</h1>
-      <p>Discover Restaurant & Delicious Food</p>
+      <h1 tabindex="0">Restaurant Apps Starter Project</h1>
+      <p tabindex="0">Discover Restaurant & Delicious Food</p>
     </div>
   </div>
 
@@ -41,9 +48,10 @@
           <img src="images/heros/hero-image_4.jpg" alt="Dicoding Fact Sheet">
           <figcaption>Image caption will be here</figcaption>
         </figure>
-        <div class="headline__content">
-          <h2>some top restaurant for dining in or Take away!</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est, adipiscing cursus auctor eget sed
+        <div class="headline__content" id="maincontent">
+          <h2 tabindex="0">some top restaurant for dining in or Take away!</h2>
+          <p tabindex="0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est, adipiscing cursus auctor eget
+            sed
             phasellus senectus. Ut tellus donec vestibulum tristique leo bibendum in a, tincidunt. Volutpat metus id
             amet, nam hac magna accumsan. Nascetur ac tortor purus ultrices morbi tellus. Lorem ipsum dolor sit amet,
             consectetur adipiscing elit. Est, adipiscing cursus auctor eget sed.</p>
@@ -55,8 +63,8 @@
 
   <main class="restaurants">
     <div class="container">
-      <h2>Explore Our Restaurants</h2>
-      <p class="desc">Something that you never try before in this world</p>
+      <h2 tabindex="0">Explore Our Restaurants</h2>
+      <p class="desc" tabindex="0">Something that you never try before in this world</p>
       <div id="resto-data" class="resto-data"></div>
     </div>
   </main>
@@ -66,12 +74,12 @@
   <footer>
     <div class="container">
       <div class="link">
-        <a href="#">Home</a>
+        <a href="/">Home</a>
         <a href="#">Favorite</a>
         <a href="https://github.com/cakrads" target="_blank">About Us</a>
       </div>
       <div class="license">
-        Copyright © 2021 - Hangout
+        Copyright © 2021 - OVERANT | Discover Restaurant
       </div>
     </div>
   </footer>

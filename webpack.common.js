@@ -48,9 +48,9 @@ module.exports = {
         },
       ],
     }),
-    // new FaviconsWebpackPlugin({
-    //   logo: path.resolve(__dirname, 'src/public/images/dicoding.jpeg'),
-    // }),
+    new FaviconsWebpackPlugin({
+      logo: path.resolve(__dirname, './src/public/images/favicon.png'),
+    }),
     new CleanWebpackPlugin(),
   ],
 };

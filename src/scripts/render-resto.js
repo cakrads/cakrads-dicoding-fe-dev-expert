@@ -11,10 +11,14 @@ function _renderRestaurants() {
         </figure>
         <div class="item-body">
           <div class="title">
-            <h3><a href="#">${item.name}</a></h3>
+            <h3>
+              <a href="#" tabindex="0" title="Restauran ${item.name}">
+                ${item.name}
+              </a>
+            </h3>
             <div class="rating">★ ${item.rating}</div>
           </div>
-          <p>${item.description}</p>
+          <p tabindex="0">${item.description}</p>
         </div>
         <div class="badge bg-purple">${item.city}</div>
       </article>`);
