@@ -89,7 +89,9 @@ a {
 a:hover {
   color: $purple-300;
 }
-
+a:active {
+  color: $purple-700;
+}
 p {
   color: $gray-500;
 }

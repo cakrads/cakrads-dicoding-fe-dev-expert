@@ -43,6 +43,14 @@
           border-bottom: 1px solid $gray-300;
           width: 100%;
           text-align: left;
+
+          a {
+            width: 100%;
+          }
+          a:active {
+            background-color: $purple-300;
+            color: $white;
+          }
         }
       }
 
