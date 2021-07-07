@@ -1,5 +1,35 @@
 @import './colors.scss';
 
+@media screen and (max-width: 499px) {
+  // make last section of services in one col
+  .services {
+
+    .services__inner {
+      section {
+        &:nth-child(3) {
+          flex-direction: column;
+          background-color: $cream-700;
+          padding: 16px;
+          text-align: center;
+
+          picture {
+            max-width: 100%;
+          }
+
+          div {
+            text-align: center;
+            p {
+              max-width: 70%;
+              margin: auto;
+              margin-bottom: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 650px) {
 
   header {
@@ -107,16 +137,40 @@
 
   }
   
+  .services {
+    
+    .services__inner {
+      
+      section {
+        div {
+          h3 {
+            font-size: $text-lg;
+          }
+          p {
+            font-size: $text-base;
+          }
+        }
+      }
+    }
+  }
+
   .restaurants .title {
     font-size: $text-xl;
   }
 }
 
-
 @media screen and (min-width: 650px) {
   
   .container {
     padding: 0px 24px;
+  }
+
+  .services {
+    
+    .services__inner {
+      max-width: 650px;
+      margin: 0px auto;
+    }
   }
 
   .headline article {
@@ -150,6 +204,42 @@
 
 }
 
+@media screen and (min-width: 850px) {
+  .services {
+    
+    .services__inner {
+      max-width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 32px;
+
+      section {
+        flex-direction: column;
+
+        &:nth-child(1), &:nth-child(2), &:nth-child(3) {
+          flex-direction: column;
+          picture {
+            margin: 0px;
+            max-width: 100%;
+          }
+
+          div {
+            padding: 10px;
+            h3 {
+              font-size: $text-lg;
+              text-align: center;
+            }
+            p {
+              font-size: $text-base;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 @media screen and (min-width: 900px) {
 
   .headline {
@@ -167,6 +257,24 @@
 
 }
 
+@media screen and (min-width: 1000px) {
+  .services {
+      
+    .services__inner {
+
+      section {
+        flex-direction: column;
+
+        &:nth-child(1), &:nth-child(2), &:nth-child(3) {
+          picture {
+            max-width: 75%;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media screen and (min-width: 1200px) {
 
   .headline article {
@@ -174,7 +282,6 @@
     .headline__content {
       padding-top: 16px;
     }
-
   }
  
 }

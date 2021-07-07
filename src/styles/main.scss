@@ -25,6 +25,7 @@ body {
 
 img {
   display: block;
+  width: 100%;
 }
 
 button:hover {
@@ -206,6 +207,58 @@ div[chromevoxignoreariahidden="1"] {
       color: $purple-500;
       font-size: $text-base;
       color: $white;
+    }
+  }
+}
+
+.services {
+  padding: 40px 0px;
+
+  h2 {
+    font-size: $text-xl;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .services__inner {
+
+    section {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+
+      picture {
+        padding: 32px;
+        background-color: $cream-700;
+      }
+      
+      div {
+        h3 {
+          font-weight: 500;
+        }
+        p {
+          font-size: $text-sm;
+        }
+      }
+
+      &:nth-child(1), &:nth-child(3) {
+        picture {
+          margin-right: 10px;
+          max-width: 50%;
+        }
+        div {
+          text-align: right;
+        }
+      }
+
+      &:nth-child(2) {
+        flex-direction: row-reverse;
+        picture {
+          margin-left: 10px;
+          max-width: 50%;
+        }
+      }
+
     }
   }
 }
