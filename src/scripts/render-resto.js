@@ -1,6 +1,6 @@
 import DATA from '../DATA.json';
 
-const restaurantsElement = document.querySelector('#resto-data');
+const elRestaurant = document.querySelector('#resto-data');
 
 function _renderRestaurants() {
   const restaurants = { ...DATA };
@@ -24,7 +24,7 @@ function _renderRestaurants() {
       </article>`);
   });
 
-  restaurantsElement.innerHTML = menuItem.join('');
+  elRestaurant.innerHTML = menuItem.join('');
 }
 
 _renderRestaurants();

@@ -1,4 +1,4 @@
-@import './colors.scss';
+@import './base.scss';
 /*
  * Globally
  *
@@ -235,6 +235,7 @@ div[chromevoxignoreariahidden="1"] {
       div {
         h3 {
           font-weight: 500;
+          font-size: $text-lg;
         }
         p {
           font-size: $text-sm;

@@ -1,23 +1,23 @@
 
-const btnMenu = document.querySelector('#btn-menu');
-const fullOverlay = document.querySelector('#full-overlay');
+const elBtnMenu = document.querySelector('#btn-menu');
+const elFullOverlay = document.querySelector('#full-overlay');
 
-btnMenu.addEventListener('click', function (event) {
-  setFullOverlay(true);
+elBtnMenu.addEventListener('click', function (event) {
+  setElFullOverlay(true);
   drawer.classList.toggle('open');
   event.stopPropagation();
   if (drawer.classList.contains("open"))
-    btnMenu.innerHTML = '✕';
+    elBtnMenu.innerHTML = '✕';
   else
-    btnMenu.innerHTML = '☰';
+    elBtnMenu.innerHTML = '☰';
 });
 
-fullOverlay.addEventListener('click', function (event) {
+elFullOverlay.addEventListener('click', function (event) {
   drawer.classList.remove('open');
-  btnMenu.innerHTML = '☰';
-  setFullOverlay(false);
+  elBtnMenu.innerHTML = '☰';
+  setElFullOverlay(false);
 });
 
-function setFullOverlay(show = false) {
+function showElFullOverlay(show = false) {
   fullOverlay.classList.toggle('open');
 }
