@@ -3,7 +3,7 @@ const elBtnMenu = document.querySelector('#btn-menu');
 const elFullOverlay = document.querySelector('#full-overlay');
 
 elBtnMenu.addEventListener('click', function (event) {
-  setElFullOverlay(true);
+  showElFullOverlay(true);
   drawer.classList.toggle('open');
   event.stopPropagation();
   if (drawer.classList.contains("open"))
@@ -15,9 +15,9 @@ elBtnMenu.addEventListener('click', function (event) {
 elFullOverlay.addEventListener('click', function (event) {
   drawer.classList.remove('open');
   elBtnMenu.innerHTML = '☰';
-  setElFullOverlay(false);
+  showElFullOverlay(false);
 });
 
 function showElFullOverlay(show = false) {
-  fullOverlay.classList.toggle('open');
+  elFullOverlay.classList.toggle('open');
 }
