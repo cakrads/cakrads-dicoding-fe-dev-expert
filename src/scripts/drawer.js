@@ -4,27 +4,26 @@ const elFullOverlay = document.querySelector('#full-overlay');
 const elDrawerMenu = document.querySelector('#drawer-menu');
 
 elBtnMenu.addEventListener('click', function (event) {
-  showElFullOverlay(true);
-  drawer.classList.toggle('open');
   event.stopPropagation();
+  _activateDrawer();
+});
+
+elFullOverlay.addEventListener('click', function (event) {
+  _activateDrawer();
+});
+
+function _activateDrawer() {
+  drawer.classList.toggle('open');
+  elFullOverlay.classList.toggle('open');
+
   if (drawer.classList.contains("open")) {
     elBtnMenu.innerHTML = '✕';
     setDrawerTabIndex(0);
     return;
   }
 
+  elBtnMenu.innerHTML = '☰';
   setDrawerTabIndex();
-  elBtnMenu.innerHTML = '☰';
-});
-
-elFullOverlay.addEventListener('click', function (event) {
-  drawer.classList.remove('open');
-  elBtnMenu.innerHTML = '☰';
-  showElFullOverlay(false);
-});
-
-function showElFullOverlay(show = false) {
-  elFullOverlay.classList.toggle('open');
 }
 
 function setDrawerTabIndex(value = -1) {
