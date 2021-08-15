@@ -29,6 +29,8 @@ function _activateDrawer() {
 function setDrawerTabIndex(value = -1) {
   const listitems = elDrawerMenu.getElementsByTagName("a");
   for (i = 0; i < listitems.length; i++) {
+    if (value === 0 && i === 0)
+      listitems[i].focus();
     listitems[i].setAttribute("tabindex", value);
   }
 }

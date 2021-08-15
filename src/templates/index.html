@@ -15,7 +15,7 @@
   <a href="#maincontent" class="skip-link">Menuju ke konten</a>
   <header>
     <div class="container">
-      <button id="btn-menu" class="btn btn-menu" href="#" tabindex="0">☰</button>
+      <button id="btn-menu" class="btn btn-menu" href="#" tabindex="0" aria-label="click to open navbar">☰</button>
       <a href="index.html" title="OVERANT - Discover Restaurant">
         <picture>
           <source srcset="./images/logo.webp" type="image/webp">
@@ -25,9 +25,9 @@
       </a>
       <nav id="drawer">
         <ul id="drawer-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="#">Favorite</a></li>
-          <li><a href="https://github.com/cakrads" target="_blank">About Us</a></li>
+          <li><a tabindex="-1" href="index.html">Home</a></li>
+          <li><a tabindex="-1" href="#">Favorite</a></li>
+          <li><a tabindex="-1" href="https://github.com/cakrads" rel="noreferrer" target="_blank">About Us</a></li>
         </ul>
       </nav>
     </div>
@@ -119,7 +119,7 @@
       <div class="link">
         <a href="index.html">Home</a>
         <a href="#">Favorite</a>
-        <a href="https://github.com/cakrads" target="_blank">About Us</a>
+        <a href="https://github.com/cakrads" rel="noreferrer" target="_blank">About Us</a>
       </div>
       <div class="license">
         OVERANT - Discover Restaurant | Copyright © 2021
