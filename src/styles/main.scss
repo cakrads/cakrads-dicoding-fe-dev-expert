@@ -54,8 +54,8 @@ button:hover {
   font-size: $text-base;
   line-height: 1.5;
   border-radius: .25rem;
-  min-width: 44px;
-  min-height: 44px;
+  min-width: 44.5px;
+  min-height: 44.5px;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
@@ -94,7 +94,7 @@ a:active {
   color: $purple-700;
 }
 p {
-  color: $gray-500;
+  color: $gray-700;
 }
 
 .skip-link {
@@ -280,7 +280,7 @@ div[chromevoxignoreariahidden="1"] {
 
     figcaption {
       text-align: center;
-      color: $gray-500;
+      color: $gray-700;
       font-size: $text-sm;
       font-weight: 400;
     }
@@ -325,11 +325,15 @@ div[chromevoxignoreariahidden="1"] {
           justify-content: space-between;
           font-size: $text-lg;
 
-          h3 a {
+          a {
             text-decoration: none;
-            font-weight: 500;
-            font-size: $text-xl;
-            padding: 12px 0;
+            
+            h3 {
+              margin: 0;
+              padding: 4px 0 8px;
+              font-weight: 500;
+              font-size: $text-xl;
+            }
           }
 
           .rating {
@@ -338,7 +342,7 @@ div[chromevoxignoreariahidden="1"] {
             min-width: 70px;
             margin-left: 8px;
             text-align: right;
-            padding-top: 3px;
+            padding-top: 4px;
           }
         }
     
@@ -381,7 +385,7 @@ div[chromevoxignoreariahidden="1"] {
 
 footer {
   padding: 32px 0 16px;
-  color: $gray-500;
+  color: $gray-700;
   background-color: $cream-700;
   
   .container {

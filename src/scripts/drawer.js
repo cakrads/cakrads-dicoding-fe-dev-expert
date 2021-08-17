@@ -5,32 +5,47 @@ const elDrawerMenu = document.querySelector('#drawer-menu');
 
 elBtnMenu.addEventListener('click', function (event) {
   event.stopPropagation();
-  _activateDrawer();
+  _toggleDrawer();
 });
 
 elFullOverlay.addEventListener('click', function (event) {
-  _activateDrawer();
+  _toggleDrawer();
 });
 
-function _activateDrawer() {
+function _toggleDrawer() {
   drawer.classList.toggle('open');
   elFullOverlay.classList.toggle('open');
 
   if (drawer.classList.contains("open")) {
     elBtnMenu.innerHTML = '✕';
-    setDrawerTabIndex(0);
+    elBtnMenu.setAttribute("aria-label",
+      "click to close navbar drawer");
+    setDrawerTabIndex(0, true);
     return;
   }
 
   elBtnMenu.innerHTML = '☰';
+  elBtnMenu.setAttribute("aria-label",
+    "click to open and go to the navbar drawer");
   setDrawerTabIndex();
 }
 
-function setDrawerTabIndex(value = -1) {
+function setDrawerTabIndex(value = -1, autoFocus = false) {
   const listitems = elDrawerMenu.getElementsByTagName("a");
   for (i = 0; i < listitems.length; i++) {
-    if (value === 0 && i === 0)
+    if (value === 0 && i === 0 && autoFocus)
       listitems[i].focus();
     listitems[i].setAttribute("tabindex", value);
   }
 }
+
+window.addEventListener('resize', setDrawerWithSize);
+
+function setDrawerWithSize() {
+  if (window.innerWidth <= 650)
+    setDrawerTabIndex();
+  else
+    setDrawerTabIndex(0);
+}
+
+setDrawerWithSize();
