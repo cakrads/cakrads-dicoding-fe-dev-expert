@@ -120,9 +120,6 @@ const HomePage = {
       restaurants.forEach((restaurant) => {
         elRestaurant.innerHTML += CardRestaurant(restaurant);
       });
-
-      const detail = await RestaurantRepository.detailRestaurant('rqdv5juczeskfw1e867');
-      console.log('detail', detail);
     } catch ({ message }) {
       elRestaurant.innerHTML = message;
     }
