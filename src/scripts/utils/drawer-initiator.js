@@ -35,10 +35,14 @@ const DrawerInitiator = {
 
   setDrawerTabIndex(value = -1, autoFocus = false) {
     const listLink = this.drawer.getElementsByTagName('a');
-    listLink.forEach((item, index) => {
-      if (value === 0 && index === 0 && autoFocus) { listLink[index].focus(); }
+
+    for (let index = 0; index < listLink.length; index += 1) {
+      if (value === 0 && index === 0 && autoFocus) {
+        listLink[index].focus();
+      }
+
       listLink[index].setAttribute('tabindex', value);
-    });
+    }
   },
 
   setDrawerWithSize() {
