@@ -1,5 +1,4 @@
-
-export const createCard = (item) => `
+const createCard = (item) => `
   <article class="resto-item">
     <figure>
       <img src="${item.pictureId}" alt="${item.name}">
@@ -18,3 +17,5 @@ export const createCard = (item) => `
     <div class="badge bg-purple">${item.city}</div>
   </article>
 `;
+
+export default createCard;

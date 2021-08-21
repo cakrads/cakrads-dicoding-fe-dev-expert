@@ -3,30 +3,32 @@ import UrlParser from '../routes/url-parser';
 import routes from '../routes/routes';
 
 class App {
-  constructor({ button, drawer, overlay, content, }) {
-    this._button = button;
-    this._drawer = drawer;
-    this._overlay = overlay;
-    this._content = content;
+  constructor({
+    button, drawer, overlay, content,
+  }) {
+    this.button = button;
+    this.drawer = drawer;
+    this.overlay = overlay;
+    this.content = content;
 
-    this._initialAppShell();
+    this.initialAppShell();
   }
 
-  _initialAppShell() {
+  initialAppShell() {
     DrawerInitiator.init({
-      button: this._button,
-      drawer: this._drawer,
-      overlay: this._overlay,
+      button: this.button,
+      drawer: this.drawer,
+      overlay: this.overlay,
     });
 
-    DrawerInitiator._setDrawerWithSize();
-    window.addEventListener('resize', DrawerInitiator._setDrawerWithSize());
+    DrawerInitiator.setDrawerWithSize();
+    window.addEventListener('resize', DrawerInitiator.setDrawerWithSize());
   }
 
   async renderPage() {
     const url = UrlParser.parseActiveUrlWithCombiner();
     const page = routes[url];
-    this._content.innerHTML = await page.render();
+    this.content.innerHTML = await page.render();
     await page.afterRender();
   }
 }

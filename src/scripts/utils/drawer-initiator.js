@@ -1,53 +1,53 @@
 const DrawerInitiator = {
   init({ button, drawer, overlay }) {
-    this._button = button;
-    this._drawer = drawer;
-    this._overlay = overlay;
+    this.button = button;
+    this.drawer = drawer;
+    this.overlay = overlay;
 
-    this._button.addEventListener('click', (event) => {
+    this.button.addEventListener('click', (event) => {
       event.stopPropagation();
-      this._toggleDrawer();
+      this.toggleDrawer();
     });
 
-    this._overlay.addEventListener('click', (event) => {
+    this.overlay.addEventListener('click', (event) => {
       event.stopPropagation();
-      this._toggleDrawer();
+      this.toggleDrawer();
     });
   },
 
-  _toggleDrawer() {
-    this._drawer.classList.toggle('open');
-    this._overlay.classList.toggle('open');
+  toggleDrawer() {
+    this.drawer.classList.toggle('open');
+    this.overlay.classList.toggle('open');
 
-    if (this._drawer.classList.contains("open")) {
-      this._button.innerHTML = '✕';
-      this._button.setAttribute("aria-label",
-        "click to close navbar drawer");
-      this._setDrawerTabIndex(0, true);
+    if (this.drawer.classList.contains('open')) {
+      this.button.innerHTML = '✕';
+      this.button.setAttribute('aria-label',
+        'click to close navbar drawer');
+      this.setDrawerTabIndex(0, true);
       return;
     }
 
-    this._button.innerHTML = '☰';
-    this._button.setAttribute("aria-label",
-      "click to open and go to the navbar drawer");
-    this._setDrawerTabIndex();
+    this.button.innerHTML = '☰';
+    this.button.setAttribute('aria-label',
+      'click to open and go to the navbar drawer');
+    this.setDrawerTabIndex();
   },
 
-  _setDrawerTabIndex(value = -1, autoFocus = false) {
-    const listLink = this._drawer.getElementsByTagName("a");
-    for (let i = 0; i < listLink.length; i++) {
-      if (value === 0 && i === 0 && autoFocus)
-        listLink[i].focus();
-      listLink[i].setAttribute("tabindex", value);
+  setDrawerTabIndex(value = -1, autoFocus = false) {
+    const listLink = this.drawer.getElementsByTagName('a');
+    listLink.forEach((item, index) => {
+      if (value === 0 && index === 0 && autoFocus) { listLink[index].focus(); }
+      listLink[index].setAttribute('tabindex', value);
+    });
+  },
+
+  setDrawerWithSize() {
+    if (window.innerWidth <= 650) {
+      this.setDrawerTabIndex();
+    } else {
+      this.setDrawerTabIndex(0);
     }
   },
-
-  _setDrawerWithSize() {
-    if (window.innerWidth <= 650)
-      this._setDrawerTabIndex();
-    else
-      this._setDrawerTabIndex(0);
-  }
 };
 
 export default DrawerInitiator;

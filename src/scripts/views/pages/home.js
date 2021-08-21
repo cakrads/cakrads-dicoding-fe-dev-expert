@@ -1,17 +1,17 @@
 import DATA from '../../../DATA.json';
-import { createCard } from '../templates/template-creator';
+import createCard from '../templates/template-creator';
 
 const HomePage = {
   async render() {
     return `
-      ${this._renderHero()}
-      ${this._renderServices()}
-      ${this._renderHeadLine()}
-      ${this._renderRestaurant()}
+      ${this.renderHero()}
+      ${this.renderServices()}
+      ${this.renderHeadLine()}
+      ${this.renderRestaurant()}
     `;
   },
 
-  _renderHero() {
+  renderHero() {
     return `
       <div class="hero">
         <div class="hero__bg"></div>
@@ -23,7 +23,7 @@ const HomePage = {
     `;
   },
 
-  _renderServices() {
+  renderServices() {
     return `
       <div class="services">
         <div class="container">
@@ -70,7 +70,7 @@ const HomePage = {
     `;
   },
 
-  _renderHeadLine() {
+  renderHeadLine() {
     return `
       <div class="headline">
         <div class="container">
@@ -94,26 +94,26 @@ const HomePage = {
     `;
   },
 
-  _renderRestaurant() {
+  renderRestaurant() {
     return `
       <div class="restaurants">
         <div class="container">
           <h2 tabindex="0">Explore Our Restaurants</h2>
           <p class="desc" tabindex="0">Something that you never try before in this world</p>
-          <div id="resto-data" class="resto-data"></div>
+          <div id="list-restaurant" class="resto-data"></div>
         </div>
       </div>
     `;
   },
 
   async afterRender() {
-    const restaurants = { ...DATA };
+    const { restaurants = [] } = { ...DATA };
 
-    const elRestaurant = document.querySelector('#resto-data');
-    restaurants.restaurants.map((item) => {
-      elRestaurant.innerHTML += createCard(item);
+    const elRestaurant = document.querySelector('#list-restaurant');
+    restaurants.forEach((restaurant) => {
+      elRestaurant.innerHTML += createCard(restaurant);
     });
-  }
+  },
 
 };
 
