@@ -1,7 +1,9 @@
-const createCard = (item) => `
+import CONFIG from '../../globals/config';
+
+const CardRestaurant = (item) => `
   <article class="resto-item">
     <figure>
-      <img src="${item.pictureId}" alt="${item.name}">
+      <img src="${`${CONFIG.BASE_IMAGE_URL}medium/${item.pictureId}`}" alt="${item.name}">
     </figure>
     <div class="item-body">
       <div class="title">
@@ -18,4 +20,4 @@ const createCard = (item) => `
   </article>
 `;
 
-export default createCard;
+export default CardRestaurant;

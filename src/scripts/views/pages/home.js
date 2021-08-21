@@ -1,5 +1,5 @@
-import DATA from '../../../DATA.json';
-import createCard from '../templates/template-creator';
+import RestaurantRepository from '../../data/restaurant-repository';
+import CardRestaurant from '../templates/template-creator';
 
 const HomePage = {
   async render() {
@@ -107,12 +107,25 @@ const HomePage = {
   },
 
   async afterRender() {
-    const { restaurants = [] } = { ...DATA };
-
     const elRestaurant = document.querySelector('#list-restaurant');
-    restaurants.forEach((restaurant) => {
-      elRestaurant.innerHTML += createCard(restaurant);
-    });
+
+    try {
+      const response = await RestaurantRepository.listRestaurant();
+      const { restaurants = [] } = response;
+
+      if (restaurants.length >= 0) {
+        elRestaurant.innerHTML = 'Sorry, There\'s no restaurant available';
+      }
+
+      restaurants.forEach((restaurant) => {
+        elRestaurant.innerHTML += CardRestaurant(restaurant);
+      });
+
+      const detail = await RestaurantRepository.detailRestaurant('rqdv5juczeskfw1e867');
+      console.log('detail', detail);
+    } catch ({ message }) {
+      elRestaurant.innerHTML = message;
+    }
   },
 
 };
