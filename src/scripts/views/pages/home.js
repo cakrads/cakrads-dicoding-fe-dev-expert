@@ -113,8 +113,9 @@ const HomePage = {
       const response = await RestaurantRepository.listRestaurant();
       const { restaurants = [] } = response;
 
-      if (restaurants.length >= 0) {
+      if (!restaurants.length) {
         elRestaurant.innerHTML = 'Sorry, There\'s no restaurant available';
+        return;
       }
 
       restaurants.forEach((restaurant) => {
