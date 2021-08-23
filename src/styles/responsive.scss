@@ -31,7 +31,7 @@
 
 @media screen and (max-width: 650px) {
 
-  header {
+  .header-navigation {
     .container {
       position: relative;
       justify-content: flex-start;
@@ -95,14 +95,12 @@
 
 @media screen and (min-width: 651px) and (max-width: 900px) {
 
-  header {
-
+  .header-navigation {
     .container {
       h1 {
         font-size: $text-4xl;
       }
     }
-
   }
 
 }
@@ -183,6 +181,38 @@
 }
 
 @media screen and (min-width: 700px) {
+
+  .detail-title {
+
+    .detail-title-main {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  
+      h1 {
+        font-size: $text-4xl;
+      }
+      .btn {
+        background: none;
+        display: block;
+      }
+    }
+
+  }
+ 
+  .detail-content {
+    grid-template-columns: 2fr 1fr;
+
+    .detail-menus {
+      grid-column-start: 2;
+      grid-row-start: 1;
+      grid-row-end: 3;
+    }
+  }
+
+  .mobile-like {
+    display: none;
+  }
 
   footer {
     padding: 24px;
