@@ -325,27 +325,27 @@
       grid-row-gap: 16px;
     }
 
-    figure {
-      height: 180px;
+    picture {
+      height: 157px;
       margin-bottom: 8px;
     }
   }
 
   @media screen and (min-width: 700px) {
-    figure {
-      height: 200px;
+    picture {
+      height: 179px;
     }
   }
 
   @media screen and (min-width: 800px) {
-    figure {
-      height: 239px;
+    picture {
+      height: 206px;
     }
   }
 
   @media screen and (min-width: 900px) {
-    figure {
-      height: 265px;
+    picture {
+      height: 236px;
     }
   }
 
@@ -354,20 +354,20 @@
       grid-template-columns: 1fr 1fr 1fr;
     }
 
-    figure {
-      height: 200px;
+    picture {
+      height: 174px;
     }
   }
 
   @media screen and (min-width: 1100px) {
-    figure {
-      height: 225px;
+    picture {
+      height: 193px;
     }
   }
 
   @media screen and (min-width: 1200px) {
-    figure {
-      height: 245px;
+    picture {
+      height: 210px;
     }
   }
 }
