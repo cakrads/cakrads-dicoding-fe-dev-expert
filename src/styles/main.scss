@@ -478,6 +478,12 @@ p {
   display:grid;
   grid-gap: 16px;
   
+  .detail-picture {
+    img {
+      border-radius: $radius-lg;
+    }
+  }
+
   .detail-menus {
 
     ul li {
@@ -586,3 +592,4 @@ footer {
 }
 
 @import './responsive.scss';
+@import './skeleton.scss';

@@ -8,7 +8,7 @@ const CardRestaurant = (item) => `
     </picture>
     <div class="item-body">
       <div class="title">
-        <a href="#" tabindex="0" title="Restauran ${item.name}">
+        <a href="${`/#/detail/${item.id}`}" tabindex="0" title="Restauran ${item.name}">
           <h3>
             ${item.name}
           </h3>

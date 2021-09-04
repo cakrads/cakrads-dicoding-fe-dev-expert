@@ -1,0 +1,37 @@
+.loading {
+  margin-bottom:6px;
+  border-radius: 2px;
+  background: rgba(130, 130, 130, 0.2);
+  background: -webkit-gradient(linear, left top, right top, color-stop(8%, rgba(130, 130, 130, 0.2)), color-stop(18%, rgba(130, 130, 130, 0.3)), color-stop(33%, rgba(130, 130, 130, 0.2)));
+  background: linear-gradient(to right, rgba(130, 130, 130, 0.2) 8%, rgba(130, 130, 130, 0.3) 18%, rgba(130, 130, 130, 0.2) 33%);
+  animation: loading 2s infinite ease-out;
+}
+
+.skeleton-detail {
+  margin: 24px auto 16px;
+
+  .title {
+    width: 75%;
+    height: 40px;
+    margin-bottom: 16px;
+  }
+  .sub-title {
+    width: 30%;
+    height: 20px;
+    margin-bottom: 16px;
+  }
+  .picture {
+    width: 100%;
+    height: 250px;
+  }
+  .card {
+    width: 75%;
+    height: 170px;
+  }
+}
+
+@keyframes loading {  
+  to {
+    background-position: 315px 0, 0 0, 0 190px, 50px 195px;
+  }
+}

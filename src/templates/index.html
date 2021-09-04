@@ -23,7 +23,7 @@
     <div class="container">
       <button id="hamburgerButton" class="btn btn-menu" href="#" tabindex="0"
         aria-label="click to open and go to the navbar drawer">☰</button>
-      <a href="index.html" title="OVERANT - Discover Restaurant">
+      <a href="/#" title="OVERANT - Discover Restaurant">
         <picture>
           <source srcset="./images/logo.webp" type="image/webp">
           <source srcset="images/logo.png" type="image/png">
@@ -32,7 +32,7 @@
       </a>
       <nav id="navigationDrawer">
         <ul id="drawer-menu">
-          <li><a href="#">Home</a></li>
+          <li><a href="/#">Home</a></li>
           <li><a href="#">Favorite</a></li>
           <li><a href="https://github.com/cakrads" rel="noreferrer" target="_blank">About Us</a></li>
         </ul>
@@ -40,7 +40,14 @@
     </div>
   </header>
 
-  <main id="mainContent"></main>
+  <main id="mainContent">
+    <div class="skeleton-detail container">
+      <div class="loading title"></div>
+      <div class="loading sub-title"></div>
+      <div class="loading picture"></div>
+      <div class="loading card"></div>
+    </div>
+  </main>
 
   <div id="overlayDrawer" class="full-overlay"></div>
   <footer>

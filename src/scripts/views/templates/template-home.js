@@ -75,7 +75,7 @@ const renderHeadLine = () => `
   </div>
 `;
 
-const renderRestaurant = () => `
+const renderRestaurantContainer = () => `
   <div class="restaurants">
     <div class="container">
       <h2 tabindex="0">Explore Our Restaurants</h2>
@@ -89,5 +89,5 @@ export {
   renderHero,
   renderServices,
   renderHeadLine,
-  renderRestaurant,
+  renderRestaurantContainer,
 };

@@ -1,7 +1,7 @@
 import RestaurantRepository from '../../data/restaurant-repository';
 import CardRestaurant from '../templates/template-creator';
 import {
-  renderHero, renderHeadLine, renderServices, renderRestaurant,
+  renderHero, renderHeadLine, renderServices, renderRestaurantContainer,
 } from '../templates/template-home';
 
 const HomePage = {
@@ -10,7 +10,7 @@ const HomePage = {
       ${renderHero()}
       ${renderHeadLine()}
       ${renderServices()}
-      ${renderRestaurant()}
+      ${renderRestaurantContainer()}
     `;
   },
 
