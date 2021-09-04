@@ -1,8 +1,8 @@
 import UrlParser from '../../routes/url-parser';
 import RestaurantRepository from '../../data/restaurant-repository';
 import { createDetailRestaurant, createLoadingDetail } from '../templates/template-detail';
-// import LikeFABInitiator from '../../utils/like-fab-initiator';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
+import ReviewInitiator from '../../utils/review-initiator';
 
 const Detail = {
 
@@ -33,6 +33,18 @@ const Detail = {
         description: restaurant.description,
         city: restaurant.city,
       },
+    });
+
+    ReviewInitiator.init({
+      id: url.id,
+      reviewListContainer: document.querySelector('#review-list-container'),
+      reviewFormContainer: document.querySelector('#review-form-container'),
+      reviewForm: document.querySelector('#review-form'),
+      customerReviews: restaurant.customerReviews,
+      ratingsContainer: [
+        document.querySelector('#total-header-review'),
+        document.querySelector('#total-customer-review'),
+      ],
     });
   },
 };

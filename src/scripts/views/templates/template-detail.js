@@ -48,6 +48,24 @@ export const createCustomerReviews = (customerReviews) => {
   return customerReview;
 };
 
+export const createReviewForm = () => `
+  <form id="review-form" class="form">
+    <div class="alert-success"></div>
+    <div class="alert-error"></div>
+    <div class="field">
+      <label for="review-name">Name</label>
+      <input id="review-name" type="text" placeholder="your great name here" required>
+    </div>
+    <div class="field">
+      <label for="review-message">Your Review</label>
+      <textarea id="review-message" placeholder="what do you think about this restaurant" required></textarea>
+    </div>
+    <button class="btn bg-purple">
+      <i class="fa fa-send" aria-hidden="true"></i> SEND
+    </button>
+  </form>
+`;
+
 export const createDetailRestaurant = (restaurants = {}) => {
   const {
     id, name, description, city, address, pictureId, categories = [],
@@ -62,14 +80,16 @@ export const createDetailRestaurant = (restaurants = {}) => {
             <h1>${name}</h1>
           </div>
           <div id="like-btn-container">
-            <button class="btn bg-plain" data-id="${id}">
+            <button class="btn bg-plain">
               <i class="fa fa-heart-o" aria-hidden="true"></i> Save
             </button>
           </div>
         </div>
         <div class="detail-title-info">
           <span>
-            <i class="fa fa-star" aria-hidden="true"></i> ${rating} (${customerReviews.length} reviews)
+            <i class="fa fa-star" aria-hidden="true"></i> 
+            ${rating} 
+            (<span id="total-header-review">${customerReviews.length}</span> reviews)
           </span>
           <span class="sparate"> · </span>
           <span>
@@ -110,30 +130,21 @@ export const createDetailRestaurant = (restaurants = {}) => {
             ${createCategories(categories)}
           </section>
         </div>
+
         <div class="detail-reviews card">
-          <section>
-            <div class="title">
-              <h2>Reviews</h2>
-              <div>
-                <i class="fa fa-star" aria-hidden="true"></i> ${rating} (${customerReviews.length} reviews)
-              </div>
+          <header class="title">
+            <h2>Reviews</h2>
+            <div>
+              <i class="fa fa-star" aria-hidden="true"></i> 
+              ${rating} 
+              (<span id="total-customer-review">${customerReviews.length}</span> reviews)
             </div>
+          </header>
+          <section id="review-list-container">
             ${createCustomerReviews(customerReviews)}
           </section>
-          <section class="form-review">
-            <form class="form">
-              <div class="field">
-                <label for="review-name">Name</label>
-                <input id="review-name" type="text" placeholder="your great name here" required>
-              </div>
-              <div class="field">
-                <label for="review-message">Your Review</label>
-                <textarea id="review-message" placeholder="what do you think about this restaurant" required></textarea>
-              </div>
-              <button class="btn bg-purple">
-                <i class="fa fa-send" aria-hidden="true"></i> SEND
-              </button>
-            </form>
+          <section id="review-form-container" class="form-review">
+            ${createReviewForm(id)}
           </section>
         </div>
       </div>

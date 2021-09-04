@@ -517,6 +517,15 @@ p {
     .form-review {
       border-top: solid thin $gray-300;
       padding-top: 16px;
+
+      .alert-success {
+        color: $success;
+        text-align: center;
+      }
+      .alert-error {
+        color: $error;
+        text-align: center;
+      }
     }
   }
 }
