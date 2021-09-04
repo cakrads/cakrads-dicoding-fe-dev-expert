@@ -1,11 +1,11 @@
 import FavoriteMovieIdb from '../../data/restaurant-idb';
 import CardRestaurant from '../templates/template-creator';
-import { createFavoriteRestaurant } from '../templates/template-favorite';
+import { createFavoriteContainer } from '../templates/template-favorite';
 
 const Favorites = {
   async render() {
     return `
-      ${createFavoriteRestaurant()}
+      ${createFavoriteContainer()}
     `;
   },
 
