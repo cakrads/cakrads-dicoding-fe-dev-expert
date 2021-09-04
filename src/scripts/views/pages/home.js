@@ -1,16 +1,16 @@
 import RestaurantRepository from '../../data/restaurant-repository';
 import CardRestaurant from '../templates/template-creator';
 import {
-  renderHero, renderHeadLine, renderServices, renderRestaurantContainer,
+  createHero, createHeadLine, createServices, createRestaurantContainer,
 } from '../templates/template-home';
 
 const HomePage = {
   async render() {
     return `
-      ${renderHero()}
-      ${renderHeadLine()}
-      ${renderServices()}
-      ${renderRestaurantContainer()}
+      ${createHero()}
+      ${createHeadLine()}
+      ${createServices()}
+      ${createRestaurantContainer()}
     `;
   },
 

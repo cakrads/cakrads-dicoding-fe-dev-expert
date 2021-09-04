@@ -1,6 +1,6 @@
 import CONFIG from '../../globals/config';
 
-const CardRestaurant = (item) => `
+export default (item) => `
   <article class="resto-item">
     <picture>
       <source media="(min-width:600px)" srcset="${`${CONFIG.BASE_IMAGE_URL}medium/${item.pictureId}`}">
@@ -20,5 +20,3 @@ const CardRestaurant = (item) => `
     <div class="badge bg-purple">${item.city}</div>
   </article>
 `;
-
-export default CardRestaurant;

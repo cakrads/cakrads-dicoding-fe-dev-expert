@@ -1,6 +1,6 @@
 import CONFIG from '../../globals/config';
 
-export const renderFoodMenus = ({ foods = [] }) => {
+export const createFoodMenus = ({ foods = [] }) => {
   if (foods.length === 0) return 'No Foods Here';
 
   let food = '';
@@ -11,7 +11,7 @@ export const renderFoodMenus = ({ foods = [] }) => {
   return `<ul>${food}</ul>`;
 };
 
-export const renderDrinkMenus = ({ drinks = [] }) => {
+export const createDrinkMenus = ({ drinks = [] }) => {
   if (drinks.length === 0) return 'No Drinks Here';
 
   let drink = '';
@@ -22,7 +22,7 @@ export const renderDrinkMenus = ({ drinks = [] }) => {
   return `<ul>${drink}</ul>`;
 };
 
-export const renderCategories = (categories = []) => {
+export const createCategories = (categories = []) => {
   if (categories.length === 0) return 'No Drinks Here';
 
   let drink = '';
@@ -33,7 +33,7 @@ export const renderCategories = (categories = []) => {
   return `<ul>${drink}</ul>`;
 };
 
-export const renderCustomerReviews = (customerReviews) => {
+export const createCustomerReviews = (customerReviews) => {
   if (customerReviews.length === 0) return '<center>No Review Here</center>';
 
   let customerReview = '';
@@ -48,7 +48,7 @@ export const renderCustomerReviews = (customerReviews) => {
   return customerReview;
 };
 
-export const renderDetailRestaurant = (restaurants = {}) => {
+export const createDetailRestaurant = (restaurants = {}) => {
   const {
     id, name, description, city, address, pictureId, categories = [],
     menus = { foods: [], drinks: [] }, rating, customerReviews = [],
@@ -61,7 +61,7 @@ export const renderDetailRestaurant = (restaurants = {}) => {
           <div>
             <h1>${name}</h1>
           </div>
-          <div>
+          <div id="like-btn-container">
             <button class="btn bg-plain" data-id="${id}">
               <i class="fa fa-heart-o" aria-hidden="true"></i> Save
             </button>
@@ -97,17 +97,17 @@ export const renderDetailRestaurant = (restaurants = {}) => {
             <h2 class="title">Menus</h2>
             <article>
               <h3>Foods</h3>
-              ${renderFoodMenus(menus)}
+              ${createFoodMenus(menus)}
             </article>
             <br />
             <article>
               <h3>Drink</h3>
-              ${renderDrinkMenus(menus)}
+              ${createDrinkMenus(menus)}
             </article>
             <br/>
             <br/>
             <h2 class="title">Categories</h2>
-            ${renderCategories(categories)}
+            ${createCategories(categories)}
           </section>
         </div>
         <div class="detail-reviews card">
@@ -118,7 +118,7 @@ export const renderDetailRestaurant = (restaurants = {}) => {
                 <i class="fa fa-star" aria-hidden="true"></i> ${rating} (${customerReviews.length} reviews)
               </div>
             </div>
-            ${renderCustomerReviews(customerReviews)}
+            ${createCustomerReviews(customerReviews)}
           </section>
           <section class="form-review">
             <form class="form">
@@ -141,7 +141,7 @@ export const renderDetailRestaurant = (restaurants = {}) => {
   `;
 };
 
-export const renderLoadingDetail = () => `
+export const createLoadingDetail = () => `
   <div class="skeleton-detail">
     <div class="loading title"></div>
     <div class="loading sub-title"></div>

@@ -1,4 +1,4 @@
-const renderHero = () => `
+const createHero = () => `
   <div class="hero">
     <div class="hero__bg"></div>
     <div class="hero__inner">
@@ -8,7 +8,7 @@ const renderHero = () => `
   </div>
 `;
 
-const renderServices = () => `
+const createServices = () => `
   <div class="services">
     <div class="container">
       <article id="mainWebValue">
@@ -53,7 +53,7 @@ const renderServices = () => `
   </div>
 `;
 
-const renderHeadLine = () => `
+const createHeadLine = () => `
   <div class="headline">
     <div class="container">
       <article>
@@ -75,7 +75,7 @@ const renderHeadLine = () => `
   </div>
 `;
 
-const renderRestaurantContainer = () => `
+const createRestaurantContainer = () => `
   <div class="restaurants">
     <div class="container">
       <h2 tabindex="0">Explore Our Restaurants</h2>
@@ -86,8 +86,8 @@ const renderRestaurantContainer = () => `
 `;
 
 export {
-  renderHero,
-  renderServices,
-  renderHeadLine,
-  renderRestaurantContainer,
+  createHero,
+  createServices,
+  createHeadLine,
+  createRestaurantContainer,
 };
