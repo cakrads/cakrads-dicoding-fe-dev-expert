@@ -44,6 +44,7 @@
     "file-loader": "^6.2.0",
     "idb": "^6.1.2",
     "lit-element": "^2.5.1",
-    "regenerator-runtime": "^0.13.5"
+    "regenerator-runtime": "^0.13.5",
+    "serviceworker-webpack-plugin": "^1.0.1"
   }
 }

@@ -1,6 +1,7 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.scss';
 import App from './views/app';
+import swRegister from './utils/sw-register';
 import './views/templates/component/alert-info';
 
 const app = new App({
@@ -16,4 +17,5 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('load', () => {
   app.renderPage();
+  swRegister();
 });
