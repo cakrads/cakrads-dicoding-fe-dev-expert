@@ -80,6 +80,7 @@ const createRestaurantContainer = () => `
     <div class="container">
       <h2 tabindex="0">Explore Our Restaurants</h2>
       <p class="desc" tabindex="0">Something that you never try before in this world</p>
+      <div id="restaurant-alert-info"></div>
       <div id="list-restaurant" class="resto-data"></div>
     </div>
   </div>

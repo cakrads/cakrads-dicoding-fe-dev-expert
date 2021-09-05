@@ -1,6 +1,7 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.scss';
 import App from './views/app';
+import './views/templates/component/alert-info';
 
 const app = new App({
   button: document.querySelector('#hamburgerButton'),

@@ -1,5 +1,6 @@
 import RestaurantRepository from '../data/restaurant-repository';
 import { createCustomerReviews } from '../views/templates/template-detail';
+import { createAlertContainer } from '../views/templates/template-creator';
 
 const ReviewInitiator = {
   async init(props) {
@@ -48,9 +49,9 @@ const ReviewInitiator = {
   },
 
   successSendReview() {
+    const alertOptions = { type: 'success', close: true, autoClose: true };
     const successContainer = this.form.children[0];
-    successContainer.innerHTML = 'Thank you for Review';
-    setTimeout(() => { successContainer.innerHTML = ''; }, 5000);
+    successContainer.innerHTML = createAlertContainer('Thank you for Review', alertOptions);
 
     this.afterSuccess();
   },
@@ -64,9 +65,9 @@ const ReviewInitiator = {
   },
 
   failedSendReview(message) {
+    const alertOptions = { type: 'error', close: true, autoClose: true };
     const failContainer = this.form.children[1];
-    failContainer.innerHTML = `Something Wrong, ${message}`;
-    setTimeout(() => { failContainer.innerHTML = ''; }, 5000);
+    failContainer.innerHTML = createAlertContainer(message, alertOptions);
   },
 };
 

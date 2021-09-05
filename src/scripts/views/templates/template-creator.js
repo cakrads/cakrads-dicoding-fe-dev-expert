@@ -1,6 +1,6 @@
 import CONFIG from '../../globals/config';
 
-export default (item) => `
+export const createCardRestaurant = (item) => `
   <article class="resto-item">
     <picture>
       <source media="(min-width:600px)" srcset="${`${CONFIG.BASE_IMAGE_URL}medium/${item.pictureId}`}">
@@ -20,3 +20,35 @@ export default (item) => `
     <div class="badge bg-purple">${item.city}</div>
   </article>
 `;
+
+export const createCardSkeleton = () => `
+  <div class="skeleton-card">
+    <div class="loading picture"></div>
+    <div class="loading title"></div>
+    <div class="loading description w-80"></div>
+    <div class="loading description"></div>
+    <div class="loading description w-50"></div>
+  </div>
+`;
+
+export const createContainerCard = () => `
+    ${createCardSkeleton()}
+    ${createCardSkeleton()}
+    ${createCardSkeleton()}
+    ${createCardSkeleton()}
+    ${createCardSkeleton()}
+    ${createCardSkeleton()}
+  `;
+
+export const createAlertContainer = (message, options) => {
+  const { type = 'error', close = false, autoClose = false } = options;
+
+  return `
+    <alert-info
+      type=${type}
+      message="${message}"
+      ${close ? 'close' : ''}
+      ${autoClose ? 'autoClose' : ''}
+    ></alert-info>
+  `;
+};
