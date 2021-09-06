@@ -17,13 +17,13 @@ const Favorites = {
     try {
       const restaurants = await FavoriteMovieIdb.getAllRestaurants();
 
+      elRestaurant.innerHTML = '';
       if (!restaurants.length) {
         const message = 'You didn\'t choose any Favorite Restaurant';
         elAlertInfo.innerHTML = createAlertContainer(message, { type: 'info' });
         return;
       }
 
-      elRestaurant.innerHTML = '';
       restaurants.forEach((restaurant) => {
         elRestaurant.innerHTML += createCardRestaurant(restaurant);
       });

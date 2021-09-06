@@ -13,6 +13,8 @@ const DrawerInitiator = {
       event.stopPropagation();
       this.toggleDrawer();
     });
+
+    this.listenLink();
   },
 
   toggleDrawer() {
@@ -33,6 +35,14 @@ const DrawerInitiator = {
     this.setDrawerTabIndex();
   },
 
+  closeDrawer() {
+    this.drawer.classList.remove('open');
+    this.overlay.classList.remove('open');
+    this.button.innerHTML = '☰';
+    this.button.setAttribute('aria-label',
+      'click to open and go to the navbar drawer');
+  },
+
   setDrawerTabIndex(value = -1, autoFocus = false) {
     const listLink = this.drawer.getElementsByTagName('a');
 
@@ -49,7 +59,18 @@ const DrawerInitiator = {
     if (window.innerWidth <= 650) {
       this.setDrawerTabIndex();
     } else {
+      this.closeDrawer();
       this.setDrawerTabIndex(0);
+    }
+  },
+
+  listenLink() {
+    const listLink = this.drawer.getElementsByTagName('a');
+
+    for (let index = 0; index < listLink.length; index += 1) {
+      listLink[index].addEventListener('click', () => {
+        this.closeDrawer();
+      });
     }
   },
 };

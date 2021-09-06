@@ -22,7 +22,9 @@ class App {
     });
 
     DrawerInitiator.setDrawerWithSize();
-    window.addEventListener('resize', DrawerInitiator.setDrawerWithSize());
+    window.addEventListener('resize', () => {
+      DrawerInitiator.setDrawerWithSize();
+    });
   }
 
   async renderPage() {
