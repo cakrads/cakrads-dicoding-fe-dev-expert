@@ -104,6 +104,7 @@ class MyElement extends LitElement {
       <div 
         class="alert ${this.config[this.type].class}"
         role="alert"
+        tabindex="0"
       >
         <b>${this.config[this.type].mainMessage}</b> ${this.message}
         ${this.createCloseBtn()}
