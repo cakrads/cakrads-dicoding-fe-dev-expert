@@ -5,7 +5,7 @@ export const createFoodMenus = ({ foods = [] }) => {
 
   let food = '';
   foods.forEach((item) => {
-    food += `<li>${item.name}</li>`;
+    food += `<li tabindex="0">${item.name}</li>`;
   });
 
   return `<ul>${food}</ul>`;
@@ -16,7 +16,7 @@ export const createDrinkMenus = ({ drinks = [] }) => {
 
   let drink = '';
   drinks.forEach((item) => {
-    drink += `<li>${item.name}</li>`;
+    drink += `<li tabindex="0">${item.name}</li>`;
   });
 
   return `<ul>${drink}</ul>`;
@@ -39,8 +39,8 @@ export const createCustomerReviews = (customerReviews) => {
   let customerReview = '';
   customerReviews.forEach((item) => {
     customerReview += `<article>
-    <h4>${item.name}</h4>
-    <p>${item.review}</p>
+    <h4 tabindex="0">${item.name}</h4>
+    <p tabindex="0">${item.review}</p>
     <span>${item.date}</span>
   </article>`;
   });
@@ -77,10 +77,10 @@ export const createDetailRestaurant = (restaurants = {}) => {
       <header class="detail-title">
         <div class="detail-title-main">
           <div>
-            <h1>${name}</h1>
+            <h1 id="mainWebValue" tabindex="0">${name}</h1>
           </div>
           <div id="like-btn-container">
-            <button class="btn bg-plain">
+            <button aria-label="like this restaurant" class="btn bg-plain">
               <i class="fa fa-heart-o" aria-hidden="true"></i> Save
             </button>
           </div>
@@ -94,7 +94,7 @@ export const createDetailRestaurant = (restaurants = {}) => {
           <span class="sparate"> · </span>
           <span>
             <i class="fa fa-map-marker" aria-hidden="true"></i>
-            <address>${city}, ${address}</address>
+            <address tabindex="0">${city}, ${address}</address>
           </span>
         </div>
       </header>
@@ -108,20 +108,20 @@ export const createDetailRestaurant = (restaurants = {}) => {
         </div>
         <div class="detail-description card">
           <section>
-            <h2 class="title">Description</h2>
-            <p>${description}</p>
+            <h2 class="title" tabindex="0">Description</h2>
+            <p tabindex="0">${description}</p>
           </section>
         </div>
         <div class="detail-menus card">
           <section>
-            <h2 class="title">Menus</h2>
+            <h2 class="title" tabindex="0">Menus</h2>
             <article>
-              <h3>Foods</h3>
+              <h3 tabindex="0">Foods</h3>
               ${createFoodMenus(menus)}
             </article>
             <br />
             <article>
-              <h3>Drink</h3>
+              <h3 tabindex="0">Drink</h3>
               ${createDrinkMenus(menus)}
             </article>
             <br/>
@@ -133,7 +133,7 @@ export const createDetailRestaurant = (restaurants = {}) => {
 
         <div class="detail-reviews card">
           <header class="title">
-            <h2>Reviews</h2>
+            <h2 tabindex="0">Reviews</h2>
             <div>
               <i class="fa fa-star" aria-hidden="true"></i> 
               ${rating} 

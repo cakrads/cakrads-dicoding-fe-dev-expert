@@ -11,13 +11,13 @@ const createFABLiked = () => `
 `;
 
 const createButtonLike = () => `
-  <button class="btn bg-plain" id="like-button">
+  <button aria-label="like this restaurant" class="btn bg-plain" id="like-button">
     <i class="fa fa-heart-o" aria-hidden="true"></i> Save
   </button>
 `;
 
 const createButtonLiked = () => `
-  <button class="btn bg-plain" id="like-button">
+  <button aria-label="unlike this restaurant" class="btn bg-plain" id="like-button">
     <i class="fa fa-heart" aria-hidden="true"></i> Save
   </button>
 `;
