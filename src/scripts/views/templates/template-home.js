@@ -16,9 +16,9 @@ const createServices = () => `
         <div class="services__inner">
           <section>
             <picture>
-              <source srcset="images/feature 1.webp" type="image/webp">
-              <source srcset="images/feature 1.png" type="image/png">
-              <img src="images/feature 1.webp" alt="Advanced Table Booking">
+              <source srcset="images/feature-1.webp" type="image/webp">
+              <source srcset="images/feature-1.png" type="image/png">
+              <img src="images/feature-1.webp" alt="Advanced Table Booking">
             </picture>
             <div>
               <h3 tabindex="0">Advanced Table Booking</h3>
@@ -27,9 +27,9 @@ const createServices = () => `
           </section>
           <section>
             <picture>
-              <source srcset="images/feature 2.webp" type="image/webp">
-              <source srcset="images/feature 2.png" type="image/png">
-              <img src="images/feature 2.webp" alt="Food For Free 24/7">
+              <source srcset="images/feature-2.webp" type="image/webp">
+              <source srcset="images/feature-2.png" type="image/png">
+              <img src="images/feature-2.webp" alt="Food For Free 24/7">
             </picture>
             <div>
               <h3 tabindex="0">Food For Free 24/7</h3>
@@ -38,9 +38,9 @@ const createServices = () => `
           </section>
           <section>
             <picture>
-              <source srcset="./images/feature 3.webp" type="image/webp">
-              <source srcset="images/feature 3.png" type="image/png">
-              <img src="images/feature 3.webp" alt="Free Home Delivery">
+              <source srcset="images/feature-3.webp" type="image/webp">
+              <source srcset="images/feature-3.png" type="image/png">
+              <img src="images/feature-3.webp" alt="Free Home Delivery">
             </picture>
             <div>
               <h3 tabindex="0">Free Home Delivery</h3>
