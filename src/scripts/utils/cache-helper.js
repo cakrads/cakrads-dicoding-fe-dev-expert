@@ -38,13 +38,8 @@ const CacheHelper = {
   },
 
   async addCache(request) {
-    try {
-      const cache = await this.openCache();
-      cache.add(request);
-      return true;
-    } catch (error) {
-      return false;
-    }
+    const cache = await this.openCache();
+    cache.add(request);
   },
 };
 
