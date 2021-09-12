@@ -63,7 +63,7 @@ const createHeadLine = () => `
             <source media="(min-width:900px)" srcset="images/heros/headline-lg-screen.png" type="image/png">
             <source media="(max-width:899px)" srcset="images/heros/headline-sm-screen.webp" type="image/webp">
             <source media="(max-width:899px)" srcset="images/heros/headline-sm-screen.png" type="image/png">
-            <img src="images/heros/headline-sm-screen.webp" alt="OVERANT - Discover Restaurant">
+            <img class="lazyload" data-src="images/heros/headline-sm-screen.webp" alt="OVERANT - Discover Restaurant">
           </picture>
           <figcaption>Image caption will be here</figcaption>
         </figure>
