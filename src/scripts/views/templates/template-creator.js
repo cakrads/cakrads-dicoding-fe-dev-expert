@@ -4,7 +4,8 @@ export const createCardRestaurant = (item) => `
   <article class="resto-item">
     <a href="${`#/detail/${item.id}`}" title="Restauran ${item.name}">
       <picture>
-        <source media="(min-width:600px)" srcset="${`${CONFIG.BASE_IMAGE_URL}medium/${item.pictureId}`}">
+        <source media="(min-width:1000px)" srcset="${`${CONFIG.BASE_IMAGE_URL}large/${item.pictureId}`}">
+        <source media="(min-width:700px)" srcset="${`${CONFIG.BASE_IMAGE_URL}medium/${item.pictureId}`}">
         <img src="${`${CONFIG.BASE_IMAGE_URL}small/${item.pictureId}`}" alt="${item.name}">
       </picture>
     </a>

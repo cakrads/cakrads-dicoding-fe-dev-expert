@@ -45,3 +45,37 @@ Saran
 [OK] Alangkah baiknya bila Anda menerapkan Web Component secara native menggunakan Custom Element.
 [OK] Tambahkan indikator loading ketika data sedang dimuat dari server.
 [OK] Tampilkanlah keterangan/halaman bila request yang dilakukan gagal.
+
+
+Integration Test
+[] integration test menyukai
+[] integration test batal menyukai
+
+End to End Test
+[] Menyukai salah satu restoran.
+[] Batal menyukai restoran tersebut.
+
+Image Optimization
+[] kompresi terhadap gambar hero yang digunakan, ukuran gambar harus di bawah 200kb.
+[] Menerapkan teknik image responsive pada gambar hero, resolusi gambar pada layar seluler dan desktop harus berbeda.
+[] Lazy Loading hero
+[] Lazy loading list reston di homepage
+[] Lazy loading list reston di favicon
+[] Lazy loading list reston di detail
+
+Bundle Optimization
+[] Memasang bundle analyzer pada proyek submission.
+[] Gunakan teknik Code Splitting untuk memisahkan vendor code dari kode asli yang Anda tuliskan.
+
+Pertahankan syarat yang ada pada submission sebelumnya
+[] Seperti penerapan PWA, 
+[] responsibilitas tampilan
+[] aksesibilitas pada website dan sebagainya.
+
+
+Saran Submission
+[] Menuliskan test case secara lengkap, positif
+[] Menuliskan test case secara lengkap, positif kasus negatif.
+[] Menerapkan End to End test pada skenario lain di luar yang sudah ditentukan. fitur customer review, lakukan End to End test pada fitur tersebut.
+[] Menerapkan optimasi lain di luar dari optimasi yang menjadi persyaratan. Contoh, Anda bisa menerapkan pendekatan skeleton UI, minify/uglify CSS.
+[] Mendeploy hasil web app yang Anda kerjakan ke third-party hosting. Seperti Firebase Hosting, Netlify, Heroku, Github Pages, atau yang lainnya. Serta, memperhatikan matrik
