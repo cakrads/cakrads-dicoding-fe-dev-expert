@@ -18,7 +18,7 @@ const createServices = () => `
             <picture>
               <source srcset="images/feature-1.webp" type="image/webp">
               <source srcset="images/feature-1.png" type="image/png">
-              <img src="images/feature-1.webp" alt="Advanced Table Booking">
+              <img width="100px" height="100px" src="images/feature-1.webp" alt="Advanced Table Booking">
             </picture>
             <div>
               <h3 tabindex="0">Advanced Table Booking</h3>
@@ -29,7 +29,7 @@ const createServices = () => `
             <picture>
               <source srcset="images/feature-2.webp" type="image/webp">
               <source srcset="images/feature-2.png" type="image/png">
-              <img src="images/feature-2.webp" alt="Food For Free 24/7">
+              <img width="100px" height="100px" src="images/feature-2.webp" alt="Food For Free 24/7">
             </picture>
             <div>
               <h3 tabindex="0">Food For Free 24/7</h3>
@@ -40,7 +40,7 @@ const createServices = () => `
             <picture>
               <source srcset="images/feature-3.webp" type="image/webp">
               <source srcset="images/feature-3.png" type="image/png">
-              <img src="images/feature-3.webp" alt="Free Home Delivery">
+              <img width="200px" height="200px" src="images/feature-3.webp" alt="Free Home Delivery">
             </picture>
             <div>
               <h3 tabindex="0">Free Home Delivery</h3>
@@ -63,7 +63,7 @@ const createHeadLine = () => `
             <source media="(min-width:900px)" srcset="images/heros/headline-lg-screen.png" type="image/png">
             <source media="(max-width:899px)" srcset="images/heros/headline-sm-screen.webp" type="image/webp">
             <source media="(max-width:899px)" srcset="images/heros/headline-sm-screen.png" type="image/png">
-            <img class="lazyload" data-src="images/heros/headline-sm-screen.webp" alt="OVERANT - Discover Restaurant">
+            <img width="450px" height="300px" class="lazyload" data-src="images/heros/headline-sm-screen.webp" alt="OVERANT - Discover Restaurant">
           </picture>
           <figcaption>Image caption will be here</figcaption>
         </figure>

@@ -6,7 +6,8 @@ export const createCardRestaurant = (item) => `
       <picture>
         <source media="(min-width:1000px)" srcset="${`${CONFIG.BASE_IMAGE_URL}large/${item.pictureId}`}">
         <source media="(min-width:700px)" srcset="${`${CONFIG.BASE_IMAGE_URL}medium/${item.pictureId}`}">
-        <img class="lazyload" data-src="${`${CONFIG.BASE_IMAGE_URL}small/${item.pictureId}`}" alt="${item.name}">
+        <source media="(max-width:699px)" srcset="${`${CONFIG.BASE_IMAGE_URL}medium/${item.pictureId}`}">
+        <img width="450px" height="290px" class="lazyload" data-src="${`${CONFIG.BASE_IMAGE_URL}small/${item.pictureId}`}" alt="${item.name}">
       </picture>
     </a>
     <div class="item-body">
