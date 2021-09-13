@@ -1,4 +1,4 @@
-import FavoriteMovieIdb from '../../data/restaurant-idb';
+import FavoriteRestoIdb from '../../data/restaurant-idb';
 import { createCardRestaurant, createContainerCard, createAlertContainer } from '../templates/template-creator';
 import { createFavoriteContainer } from '../templates/template-favorite';
 
@@ -15,7 +15,7 @@ const Favorites = {
     elRestaurant.innerHTML = createContainerCard();
 
     try {
-      const restaurants = await FavoriteMovieIdb.getAllRestaurants();
+      const restaurants = await FavoriteRestoIdb.getAllRestaurants();
 
       elRestaurant.innerHTML = '';
       if (!restaurants.length) {

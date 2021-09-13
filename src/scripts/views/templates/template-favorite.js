@@ -1,23 +1,23 @@
 const createFABLike = () => `
-  <button aria-label="like this restaurant" id="like-fab" class="mobile-like">
+  <button aria-label="tap to like this restaurant" id="like-fab" class="mobile-like">
      <i class="fa fa-heart-o" aria-hidden="true"></i>
   </button>
 `;
 
 const createFABLiked = () => `
-  <button aria-label="unlike this restaurant" id="like-fab" class="mobile-like">
+  <button aria-label="tap to unlike this restaurant" id="like-fab" class="mobile-like">
     <i class="fa fa-heart" aria-hidden="true"></i>
   </button>
 `;
 
 const createButtonLike = () => `
-  <button aria-label="like this restaurant" class="btn bg-plain" id="like-button">
+  <button aria-label="like this restaurant" id="like-button" class="btn bg-plain">
     <i class="fa fa-heart-o" aria-hidden="true"></i> Save
   </button>
 `;
 
 const createButtonLiked = () => `
-  <button aria-label="unlike this restaurant" class="btn bg-plain" id="like-button">
+  <button aria-label="unlike this restaurant" id="like-button" class="btn bg-plain">
     <i class="fa fa-heart" aria-hidden="true"></i> Save
   </button>
 `;

@@ -1,12 +1,15 @@
-import FavoriteRestaurantIdb from '../data/restaurant-idb';
+// import FavoriteRestaurantIdb from '../data/restaurant-idb';
 import {
   createButtonLike, createButtonLiked, createFABLike, createFABLiked,
 } from '../views/templates/template-favorite';
 
 const LikeButtonInitiator = {
-  async init({ likeButtonContainer, likeFABContainer, restaurant }) {
+  async init({
+    likeButtonContainer, likeFABContainer, favoriteDB, restaurant,
+  }) {
     this.likeButtonContainer = likeButtonContainer;
     this.likeFABContainer = likeFABContainer;
+    this.db = favoriteDB;
     this.restaurant = restaurant;
 
     await this.renderFavoriteButton();
@@ -25,7 +28,7 @@ const LikeButtonInitiator = {
   },
 
   async isRestaurantExist(id) {
-    const restaurant = await FavoriteRestaurantIdb.getRestaurant(id);
+    const restaurant = await this.db.getRestaurant(id);
     return !!restaurant;
   },
 
@@ -34,7 +37,7 @@ const LikeButtonInitiator = {
 
     const likeButton = document.querySelector('#like-button');
     likeButton.addEventListener('click', async () => {
-      await FavoriteRestaurantIdb.putRestaurant(this.restaurant);
+      await this.db.putRestaurant(this.restaurant);
       this.renderFavoriteButton();
     });
   },
@@ -44,7 +47,7 @@ const LikeButtonInitiator = {
 
     const likeButton = document.querySelector('#like-button');
     likeButton.addEventListener('click', async () => {
-      await FavoriteRestaurantIdb.deleteRestaurant(this.restaurant.id);
+      await this.db.deleteRestaurant(this.restaurant.id);
       this.renderFavoriteButton();
     });
   },
@@ -54,7 +57,7 @@ const LikeButtonInitiator = {
 
     const likeButton = document.querySelector('#like-fab');
     likeButton.addEventListener('click', async () => {
-      await FavoriteRestaurantIdb.putRestaurant(this.restaurant);
+      await this.db.putRestaurant(this.restaurant);
       this.renderFavoriteButton();
     });
   },
@@ -64,7 +67,7 @@ const LikeButtonInitiator = {
 
     const likeButton = document.querySelector('#like-fab');
     likeButton.addEventListener('click', async () => {
-      await FavoriteRestaurantIdb.deleteRestaurant(this.restaurant.id);
+      await this.db.deleteRestaurant(this.restaurant.id);
       this.renderFavoriteButton();
     });
   },

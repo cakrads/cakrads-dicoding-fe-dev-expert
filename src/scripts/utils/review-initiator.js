@@ -28,6 +28,7 @@ const ReviewInitiator = {
   async listenFormSubmit() {
     this.form.addEventListener('submit', async (e) => {
       e.preventDefault();
+      console.log('customerReviews', customerReviews);
 
       const payload = {
         id: this.id,
@@ -37,7 +38,6 @@ const ReviewInitiator = {
 
       try {
         const { customerReviews } = await RestaurantRepository.addNewReview(payload);
-
         this.data = customerReviews;
         this.successSendReview();
       } catch ({ message }) {
