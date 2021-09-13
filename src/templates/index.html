@@ -35,6 +35,7 @@
       text-rendering: auto;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      display: swap;
     }
 
     .fa-spinner:before {
@@ -80,10 +81,6 @@
       height: auto;
     }
 
-    button:hover {
-      cursor: pointer;
-    }
-
     .container {
       max-width: 1200px;
       padding: 0 15px;
@@ -118,14 +115,6 @@
       color: #2E266F;
     }
 
-    a:hover {
-      color: #4D40BB;
-    }
-
-    a:active {
-      color: #0F0C23;
-    }
-
     .skip-link {
       position: absolute;
       top: -40px;
@@ -134,10 +123,6 @@
       color: #ffffff;
       padding: 8px;
       z-index: 100;
-    }
-
-    .skip-link:focus {
-      top: 0;
     }
 
     .initial-loading {
@@ -270,71 +255,6 @@
       color: #2E266F;
       font-size: 14px;
       color: #ffffff;
-    }
-
-    @media screen and (min-width: 500px) {
-      .hero .hero__inner {
-        padding: 0 2rem;
-      }
-
-      .hero .hero__inner h1 {
-        font-size: 50px;
-      }
-
-      .hero .hero__inner p {
-        font-size: 20px;
-      }
-    }
-
-    @media screen and (max-width: 650px) {
-      .header-navigation .container {
-        position: relative;
-        justify-content: flex-start;
-      }
-
-      .header-navigation .btn-menu {
-        font-weight: bold;
-        display: block;
-        font-size: 20px;
-        background-color: transparent;
-      }
-
-      .header-navigation .btn-menu:hover {
-        color: #0F0C23;
-        background-color: #CBD5E0;
-      }
-
-      .header-navigation nav {
-        width: 250px;
-        height: 100%;
-        position: fixed;
-        top: 0;
-        transform: translate(-300px, 65px);
-        transition: transform 0.3s ease-in-out;
-        background-color: #ffffff;
-      }
-
-      .header-navigation nav ul {
-        list-style-type: none;
-        padding: 0;
-        border-top: 1px solid #CBD5E0;
-      }
-
-      .header-navigation nav ul li {
-        display: list-item;
-        border-bottom: 1px solid #CBD5E0;
-        width: 100%;
-        text-align: left;
-      }
-
-      .header-navigation nav ul li a {
-        width: 100%;
-      }
-
-      .header-navigation nav ul li a:active {
-        background-color: #4D40BB;
-        color: #ffffff;
-      }
     }
 
     @media screen and (min-width: 650px) {
