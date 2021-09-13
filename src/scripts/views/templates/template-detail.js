@@ -100,17 +100,19 @@ export const createDetailRestaurant = (restaurants = {}) => {
       </header>
       <div class="detail-content">
         <div class="detail-picture">
-          <img
-            width="500px" 
-            height="334px" 
-            alt="${name}"
-            data-srcset="
-              ${`${CONFIG.BASE_IMAGE_URL}large/${pictureId}`} 1000w,
-              ${`${CONFIG.BASE_IMAGE_URL}medium/${pictureId}`} 700w,
-              ${`${CONFIG.BASE_IMAGE_URL}small/${pictureId}`} 500w"
-            data-src="${`${CONFIG.BASE_IMAGE_URL}small/${pictureId}`}"
-            class="lazyload" 
-          />
+          <picture>
+            <img
+              width="500px" 
+              height="334px" 
+              alt="${name}"
+              sizes="(max-width: 800px) 400px, 800px"
+              data-srcset="
+                ${`${CONFIG.BASE_IMAGE_URL}medium/${pictureId}`} 800w,
+                ${`${CONFIG.BASE_IMAGE_URL}small/${pictureId}`} 400w"
+              data-src="${`${CONFIG.BASE_IMAGE_URL}small/${pictureId}`}"
+              class="lazyload" 
+            />
+          </picture>
         </div>
         <div class="detail-description card">
           <section>

@@ -3,17 +3,19 @@ import CONFIG from '../../globals/config';
 export const createCardRestaurant = (item) => `
   <article class="resto-item">
     <a href="${`#/detail/${item.id}`}" title="Restauran ${item.name}">
-      <img
-        width="450px" 
-        height="290px" 
-        alt="${item.name}"
-        data-srcset="
-          ${`${CONFIG.BASE_IMAGE_URL}large/${item.pictureId}`} 1000w",
-          ${`${CONFIG.BASE_IMAGE_URL}medium/${item.pictureId}`} 700w,
-          ${`${CONFIG.BASE_IMAGE_URL}small/${item.pictureId}`} 500w"
-        data-src="${`${CONFIG.BASE_IMAGE_URL}small/${item.pictureId}`}"
-        class="lazyload" 
-      />
+      <picture>
+        <img
+          width="450px" 
+          height="290px" 
+          alt="${item.name}"
+          sizes="(max-width: 800px) 400px, 800px"
+          data-srcset="
+            ${`${CONFIG.BASE_IMAGE_URL}medium/${item.pictureId}`} 800w,
+            ${`${CONFIG.BASE_IMAGE_URL}small/${item.pictureId}`} 400w"
+          data-src="${`${CONFIG.BASE_IMAGE_URL}small/${item.pictureId}`}"
+          class="lazyload" 
+        />
+      </picture>
     </a>
     <div class="item-body">
       <div class="title">
