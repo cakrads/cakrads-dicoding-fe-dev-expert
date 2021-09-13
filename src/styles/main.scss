@@ -246,15 +246,6 @@ p {
   min-height: 400px;
   width: 100%;
   text-align: center;
-  background-image: url("../public/images/heros/hero-image.webp");
-  background-image: image-set(
-    "../public/images/heros/hero-image.webp" type("image/webp"),
-    "../public/images/heros/hero-image.jpg" type("image/jpg")
-  );
-  background-image: -webkit-image-set(
-    url("../public/images/heros/hero-image.webp") type("image/webp"),
-    url("../public/images/heros/hero-image.jpg") type("image/jpg")
-  );
   background-position: center;
   background-color: $gray-500;
   background-size: cover;

@@ -1,5 +1,15 @@
 const createHero = () => `
-  <div class="hero">
+  <div class="hero" style="
+    background-image: url('images/heros/hero-image.webp');
+    background-image: image-set(
+      'images/heros/hero-image.webp' type('image/webp'),
+      'images/heros/hero-image.jpg' type('image/jpg')
+    );
+    background-image: -webkit-image-set(
+      'images/heros/hero-image.webp' type('image/webp'),
+      'images/heros/hero-image.jpg' type('image/jpg')
+    )
+    ">
     <div class="hero__bg"></div>
     <div class="hero__inner">
       <h1 tabindex="0">Restaurant Apps Starter Project</h1>
