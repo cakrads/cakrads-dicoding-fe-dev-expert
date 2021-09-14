@@ -8,10 +8,6 @@ export const createCardRestaurant = (item) => `
           width="450px" 
           height="290px" 
           alt="${item.name}"
-          sizes="(max-width: 800px) 400px, 800px"
-          data-srcset="
-            ${`${CONFIG.BASE_IMAGE_URL}medium/${item.pictureId}`} 800w,
-            ${`${CONFIG.BASE_IMAGE_URL}small/${item.pictureId}`} 400w"
           data-src="${`${CONFIG.BASE_IMAGE_URL}small/${item.pictureId}`}"
           class="lazyload" 
         />

@@ -50,7 +50,7 @@ const Detail = {
           document.querySelector('#total-customer-review'),
         ],
       });
-    } catch (message) {
+    } catch ({ message }) {
       restaurantContainer.innerHTML = createAlertContainer(message, { type: 'error' });
     }
   },

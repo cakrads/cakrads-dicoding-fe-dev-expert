@@ -28,7 +28,8 @@ const ReviewInitiator = {
   async listenFormSubmit() {
     this.form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      console.log('customerReviews', customerReviews);
+
+      if (!this.checkIsInputValid(e)) return;
 
       const payload = {
         id: this.id,
@@ -39,7 +40,7 @@ const ReviewInitiator = {
       try {
         const { customerReviews } = await RestaurantRepository.addNewReview(payload);
         this.data = customerReviews;
-        this.successSendReview();
+        this.successSendReview(e);
       } catch ({ message }) {
         this.failedSendReview(message);
       } finally {
@@ -48,7 +49,27 @@ const ReviewInitiator = {
     });
   },
 
-  successSendReview() {
+  checkIsInputValid(e) {
+    const elName = e.srcElement[0];
+    const elMessage = e.srcElement[1];
+
+    if (elName.value === '') {
+      this.failedSendReview('please fill your name');
+      elName.focus();
+      return false;
+    }
+    if (elMessage.value === '') {
+      elMessage.focus();
+      this.failedSendReview('please fill your review');
+      return false;
+    }
+    return true;
+  },
+
+  successSendReview(e) {
+    e.srcElement[0].value = '';
+    e.srcElement[1].value = '';
+
     const alertOptions = { type: 'success', close: true, autoClose: true };
     const successContainer = this.form.children[0];
     successContainer.innerHTML = createAlertContainer('Thank you for Review', alertOptions);

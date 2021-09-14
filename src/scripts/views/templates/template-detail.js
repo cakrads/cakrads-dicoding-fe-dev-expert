@@ -54,11 +54,11 @@ export const createReviewForm = () => `
     <div class="alert-error"></div>
     <div class="field">
       <label for="review-name">Name</label>
-      <input id="review-name" type="text" placeholder="your great name here" required>
+      <input id="review-name" type="text" placeholder="your great name here">
     </div>
     <div class="field">
       <label for="review-message">Your Review</label>
-      <textarea id="review-message" placeholder="what do you think about this restaurant" required></textarea>
+      <textarea id="review-message" placeholder="what do you think about this restaurant"></textarea>
     </div>
     <button class="btn bg-purple">
       <i class="fa fa-send" aria-hidden="true"></i> SEND
