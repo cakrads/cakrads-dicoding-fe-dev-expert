@@ -83,6 +83,14 @@ module.exports = {
     new ServiceWorkerWebpackPlugin({
       entry: path.resolve(__dirname, 'src/scripts/sw.js'),
     }),
+    new ImageminWebpackPlugin({
+      plugins: [
+        ImageminMozjpeg({
+          quality: 50,
+          progressive: true,
+        }),
+      ],
+    }),
     new ImageminWebpWebpackPlugin({
       config: [
         {
@@ -93,14 +101,6 @@ module.exports = {
         },
       ],
       overrideExtension: true,
-    }),
-    new ImageminWebpackPlugin({
-      plugins: [
-        ImageminMozjpeg({
-          quality: 50,
-          progressive: true,
-        }),
-      ],
     }),
     // new BundleAnalyzerPlugin(),
     new CompressionPlugin({
