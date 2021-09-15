@@ -8,7 +8,7 @@ export const createFoodMenus = ({ foods = [] }) => {
     food += `<li tabindex="0">${item.name}</li>`;
   });
 
-  return `<ul>${food}</ul>`;
+  return `<ul id="food-menus">${food}</ul>`;
 };
 
 export const createDrinkMenus = ({ drinks = [] }) => {
@@ -19,18 +19,18 @@ export const createDrinkMenus = ({ drinks = [] }) => {
     drink += `<li tabindex="0">${item.name}</li>`;
   });
 
-  return `<ul>${drink}</ul>`;
+  return `<ul id="drink-menus">${drink}</ul>`;
 };
 
 export const createCategories = (categories = []) => {
   if (categories.length === 0) return 'No Drinks Here';
 
-  let drink = '';
+  let category = '';
   categories.forEach((item) => {
-    drink += `<li>${item.name}</li>`;
+    category += `<li>${item.name}</li>`;
   });
 
-  return `<ul>${drink}</ul>`;
+  return `<ul id="category-restaurant">${category}</ul>`;
 };
 
 export const createCustomerReviews = (customerReviews) => {

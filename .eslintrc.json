@@ -16,6 +16,7 @@
     "import/no-extraneous-dependencies": 0,
     "no-restricted-globals": 0,
     "linebreak-style": 0,
-    "class-methods-use-this": "off"
+    "class-methods-use-this": "off",
+    "codeceptjs/no-pause-in-scenario": 0
   }
 }

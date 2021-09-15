@@ -20,14 +20,15 @@ const HomePage = {
 
     try {
       const response = await RestaurantRepository.listRestaurant();
-      const { restaurants = [] } = response;
+      if (response.error) throw response;
 
-      if (!restaurants.length) {
+      if (!response.count) {
         elRestaurant.innerHTML = '';
         elRestaurant.innerHTML = 'Sorry, There\'s no restaurant available';
         return;
       }
 
+      const { restaurants = [] } = response;
       elRestaurant.innerHTML = '';
       restaurants.forEach((restaurant) => {
         elRestaurant.innerHTML += createCardRestaurant(restaurant);

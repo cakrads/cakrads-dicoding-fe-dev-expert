@@ -1,22 +1,32 @@
 {
   "name": "restaurant-apps",
   "version": "1.0.0",
-  "description": "",
+  "description": "Restaurant Application",
   "main": "index.js",
   "scripts": {
     "start-dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "lint": "eslint ./src",
     "analyze": "webpack --config webpack.build-analyze.js",
+    "lint": "eslint ./src",
     "test": "karma start",
+    "init-e2e": "npx npm-force-resolutions && npm i",
     "e2e": "codeceptjs run"
   },
   "keywords": [],
   "author": "your_name <your.email@domain.com>",
   "license": "ISC",
+  "resolutions": {
+    "@pollyjs/adapter-puppeteer": "^5.1.0",
+    "@pollyjs/core": "^5.1.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
+    "@codeceptjs/mock-request": "^0.3.0",
+    "@pollyjs/adapter-puppeteer": "^5.1.0",
+    "@pollyjs/core": "^5.1.0",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "npm-force-resolutions": "0.0.10",
     "babel-loader": "^8.1.0",
     "codeceptjs": "^3.1.2",
     "compression-webpack-plugin": "^6.x",
@@ -50,7 +60,6 @@
     "whatwg-fetch": "^3.2.0"
   },
   "dependencies": {
-    "clean-webpack-plugin": "^4.0.0-alpha.0",
     "file-loader": "^6.2.0",
     "idb": "^6.1.2",
     "lazysizes": "^5.3.2",

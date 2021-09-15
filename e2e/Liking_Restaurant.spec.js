@@ -85,7 +85,7 @@ Scenario('liking one resto in Mobile', async ({ I }) => {
   assert.strictEqual(firstRestoTitle, likedRestoTitle);
 });
 
-Scenario('dislike liking one resto in Mobile', async ({ I }) => {
+Scenario('disliking one resto in Mobile', async ({ I }) => {
   I.resizeWindow(360, 640);
 
   I.seeAttributesOnElements('#restaurant-alert-info > alert-info',

@@ -22,7 +22,10 @@ const Detail = {
     restaurantContainer.innerHTML = createLoadingDetail();
 
     try {
-      const { restaurant } = await RestaurantRepository.detailRestaurant(url.id);
+      const response = await RestaurantRepository.detailRestaurant(url.id);
+      if (response.error) throw response;
+
+      const { restaurant } = response;
       restaurantContainer.innerHTML = createDetailRestaurant(restaurant);
 
       LikeButtonInitiator.init({

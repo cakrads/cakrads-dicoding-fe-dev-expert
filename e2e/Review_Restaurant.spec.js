@@ -1,3 +1,6 @@
+const GET_DETAIL = require('./mock/get-detail.mock');
+const POST_REVIEW = require('./mock/post-review.mock');
+
 const reviewName = 'codecept';
 const reviewMessage = 'My Review From Codecept. Should used mock letter';
 
@@ -5,10 +8,10 @@ Feature('Review Restaurant');
 
 Before(({ I }) => {
   I.amOnPage('/');
-  I.click('.resto-item a');
 });
 
 Scenario('should show form revision exist and can filled', async ({ I }) => {
+  I.click('.resto-item a');
   I.seeInCurrentUrl('detail');
 
   I.fillField('Name', reviewName);
@@ -19,6 +22,7 @@ Scenario('should show form revision exist and can filled', async ({ I }) => {
 });
 
 Scenario('should prevent submit if data form empty', ({ I }) => {
+  I.click('.resto-item a');
   I.seeInCurrentUrl('detail');
 
   I.click('SEND');
@@ -35,15 +39,16 @@ Scenario('should prevent submit if data form empty', ({ I }) => {
   I.seeAttributesOnElements('alert-info', { message: 'please fill your review' });
 });
 
-Scenario('sending review', async ({ I }) => {
-  I.seeInCurrentUrl('detail');
+Scenario('sending review, success scenario', async ({ I }) => {
+  I.startMocking();
+  I.mockRequest('GET', GET_DETAIL.URL, GET_DETAIL.SUCCESS);
+  I.mockRequest('POST', POST_REVIEW.URL, POST_REVIEW.SUCCESS);
 
-  // get total review
-  const totalReviewText = await I.grabTextFrom('#total-header-review');
+  I.amOnPage('#/detail/mock-id');
 
+  // fill and send form
   I.fillField('Name', reviewName);
   I.fillField('Your Review', reviewMessage);
-
   I.click('SEND');
 
   // show alert
@@ -57,6 +62,28 @@ Scenario('sending review', async ({ I }) => {
   I.dontSeeInField('Your Review', reviewMessage);
   I.seeInField('Your Review', '');
 
-  I.see(+totalReviewText + 1, '#total-header-review');
-  I.see(+totalReviewText + 1, '#total-customer-review');
+  const totalReview = POST_REVIEW.SUCCESS.customerReviews.length;
+  I.see(totalReview, '#total-header-review');
+  I.see(totalReview, '#total-customer-review');
+
+  I.stopMocking();
+});
+
+Scenario('sending review, failed scenario', async ({ I }) => {
+  I.startMocking();
+  I.mockRequest('GET', GET_DETAIL.URL, GET_DETAIL.SUCCESS);
+  I.mockRequest('POST', POST_REVIEW.URL, POST_REVIEW.ERROR);
+
+  I.amOnPage('#/detail/mock-id');
+
+  // fill and send form
+  I.fillField('Name', reviewName);
+  I.fillField('Your Review', reviewMessage);
+  I.click('SEND');
+
+  // show alert
+  I.seeAttributesOnElements('alert-info', { type: 'error' });
+  I.seeAttributesOnElements('alert-info', { message: POST_REVIEW.ERROR.message });
+
+  I.stopMocking();
 });

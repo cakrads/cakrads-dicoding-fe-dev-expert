@@ -24,7 +24,7 @@ Scenario('check Navbar', async ({ I }) => {
   assert.strictEqual(thirdNavText, 'ABOUT US');
 });
 
-Scenario('should go to Home page when click Nav Link', ({ I }) => {
+Scenario('click Nav Link, go To Home Page', ({ I }) => {
   I.amOnPage('/#/favorite');
 
   const linkHome = locate('#drawer-menu li a').at(1);
@@ -33,17 +33,11 @@ Scenario('should go to Home page when click Nav Link', ({ I }) => {
   I.seeInCurrentUrl('/');
 });
 
-Scenario('should go to page Favorite when click Nav Link', ({ I }) => {
+Scenario('click Nav Link, go To Favorite Page', ({ I }) => {
   const linkFavorite = locate('#drawer-menu li a').at(2);
   I.click(linkFavorite);
 
   I.seeInCurrentUrl('favorite');
-});
-
-Scenario('should not throw error if in detail page if id not found', async ({ I }) => {
-  I.amOnPage('/#/detail/123xyz');
-
-  I.seeAttributesOnElements('#detail-restaurant > alert-info', { type: 'error' });
 });
 
 Scenario('should show content if offline', async ({ I }) => {
@@ -56,4 +50,8 @@ Scenario('should show content if offline', async ({ I }) => {
 
     I.see('Restaurant Apps Starter Project', 'h1');
   });
+});
+
+Scenario('Show List Restaurant', async ({ I }) => {
+  I.seeElement('#list-restaurant .resto-item');
 });

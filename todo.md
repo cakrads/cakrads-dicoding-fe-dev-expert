@@ -1,3 +1,20 @@
+Template refer to: https://figmatemplate.com/restaurant-website-landing-page-figma-template/
+https://www.figma.com/file/KEXg5Wrw9Es4EK0qo1WKr8/Expice-Restaurant-Template?node-id=1%3A2
+
+
+for detail:
+https://staycation.buildwithangga.id/properties/5e96cbe292b97300fc902222
+
+https://store-html.buildwithangga.id/
+
+https://nomads.buildwithangga.id/
+
+https://micro.buildwithangga.id/
+
+for detail review:
+https://dribbble.com/shots/9485668-Fastfood-order-app
+
+https://dribbble.com/search/review%20restaurant
 
 Halaman Utama (Daftar Restoran)
 [OK] Menampilkan daftar restoran yang datanya bersumber dari API https://restaurant-api.dicoding.dev/. Silakan lihat dokumentasinya pada halaman tersebut.

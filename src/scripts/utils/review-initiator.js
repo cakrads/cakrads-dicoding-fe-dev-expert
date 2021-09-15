@@ -38,8 +38,9 @@ const ReviewInitiator = {
       };
 
       try {
-        const { customerReviews } = await RestaurantRepository.addNewReview(payload);
-        this.data = customerReviews;
+        const response = await RestaurantRepository.addNewReview(payload);
+        if (response.error) throw response;
+        this.data = response.customerReviews;
         this.successSendReview(e);
       } catch ({ message }) {
         this.failedSendReview(message);

@@ -30,6 +30,7 @@ class App {
   async renderPage() {
     const url = UrlParser.parseActiveUrlWithCombiner();
     const page = routes[url];
+    window.scrollTo(0, 0);
     this.content.innerHTML = await page.render();
     await page.afterRender();
   }

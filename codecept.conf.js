@@ -10,8 +10,16 @@ exports.config = {
   helpers: {
     Puppeteer: {
       url: 'http://localhost:8080',
-      show: true,
-      windowSize: '1200x900',
+      show: false,
+      windowSize: '1400x900',
+      chrome: {
+        args: [
+          '--disable-web-security',
+        ],
+      },
+    },
+    MockRequestHelper: {
+      require: '@codeceptjs/mock-request',
     },
   },
   include: {
