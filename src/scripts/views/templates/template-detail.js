@@ -105,11 +105,12 @@ export const createDetailRestaurant = (restaurants = {}) => {
               width="500px" 
               height="334px" 
               alt="${name}"
+              src="images/dummy-img.jpg"
+              data-src="${`${CONFIG.BASE_IMAGE_URL}small/${pictureId}`}"
               sizes="(max-width: 800px) 400px, 800px"
               data-srcset="
                 ${`${CONFIG.BASE_IMAGE_URL}medium/${pictureId}`} 800w,
                 ${`${CONFIG.BASE_IMAGE_URL}small/${pictureId}`} 400w"
-              data-src="${`${CONFIG.BASE_IMAGE_URL}small/${pictureId}`}"
               class="lazyload" 
             />
           </picture>
