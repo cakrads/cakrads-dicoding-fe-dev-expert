@@ -65,34 +65,40 @@ Saran
 
 
 Integration Test
-[] integration test menyukai
-[] integration test batal menyukai
+[OK] integration test menyukai
+[OK] integration test batal menyukai
 
 End to End Test
-[] Menyukai salah satu restoran.
-[] Batal menyukai restoran tersebut.
+[OK] Menyukai salah satu restoran.
+[OK] Batal menyukai restoran tersebut.
 
 Image Optimization
-[] kompresi terhadap gambar hero yang digunakan, ukuran gambar harus di bawah 200kb.
-[] Menerapkan teknik image responsive pada gambar hero, resolusi gambar pada layar seluler dan desktop harus berbeda.
-[] Lazy Loading hero
-[] Lazy loading list reston di homepage
-[] Lazy loading list reston di favicon
-[] Lazy loading list reston di detail
+[OK] kompresi terhadap gambar hero yang digunakan, ukuran gambar harus di bawah 200kb.
+[OK] Menerapkan teknik image responsive pada gambar hero, resolusi gambar pada layar seluler dan desktop harus berbeda.
+[OK] Lazy Loading hero
+[OK] Lazy loading list reston di homepage
+[OK] Lazy loading list reston di favorite
+[OK] Lazy loading list reston di detail
 
 Bundle Optimization
-[] Memasang bundle analyzer pada proyek submission.
-[] Gunakan teknik Code Splitting untuk memisahkan vendor code dari kode asli yang Anda tuliskan.
+[OK] Memasang bundle analyzer pada proyek submission.
+[OK] Gunakan teknik Code Splitting untuk memisahkan vendor code dari kode asli yang Anda tuliskan.
 
 Pertahankan syarat yang ada pada submission sebelumnya
-[] Seperti penerapan PWA, 
-[] responsibilitas tampilan
-[] aksesibilitas pada website dan sebagainya.
+[OK] Seperti penerapan PWA, 
+[OK] responsibilitas tampilan
+[OK] aksesibilitas pada website dan sebagainya.
 
 
 Saran Submission
-[] Menuliskan test case secara lengkap, positif
-[] Menuliskan test case secara lengkap, positif kasus negatif.
-[] Menerapkan End to End test pada skenario lain di luar yang sudah ditentukan. fitur customer review, lakukan End to End test pada fitur tersebut.
-[] Menerapkan optimasi lain di luar dari optimasi yang menjadi persyaratan. Contoh, Anda bisa menerapkan pendekatan skeleton UI, minify/uglify CSS.
-[] Mendeploy hasil web app yang Anda kerjakan ke third-party hosting. Seperti Firebase Hosting, Netlify, Heroku, Github Pages, atau yang lainnya. Serta, memperhatikan matrik
+[OK] Menuliskan test case secara lengkap, positif
+[OK] Menuliskan test case secara lengkap, positif kasus negatif.
+[OK] Menerapkan End to End test pada skenario lain di luar yang sudah ditentukan. fitur customer review, lakukan End to End test pada fitur tersebut.
+[OK] Menerapkan optimasi lain di luar dari optimasi yang menjadi persyaratan. Contoh, Anda bisa menerapkan pendekatan skeleton UI, minify/uglify CSS.
+Optimasi lainnya yang digunakan:
+- menggunakan compression-webpack-plugin agar hasil build memiliki gzip
+- preconnect important external URL (ex: dicoding API)
+- Preload Critical Hero image
+- Add Critical CSS
+[OK] Mendeploy hasil web app yang Anda kerjakan ke third-party hosting. Seperti Firebase Hosting, Netlify, Heroku, Github Pages, atau yang lainnya. Serta, memperhatikan matrik
+- https://upbeat-golick-711d5b.netlify.app/

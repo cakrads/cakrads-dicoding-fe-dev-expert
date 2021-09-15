@@ -1,13 +1,13 @@
 const createHero = () => `
   <div class="hero" style="
-    background-image: url('images/heros/hero-image.webp');
+    background-image: url('images/heros/hero-image-sm.webp');
     background-image: image-set(
-      'images/heros/hero-image.webp' type('image/webp'),
-      'images/heros/hero-image.jpg' type('image/jpg')
+      'images/heros/hero-image-sm.webp' type('image/webp'),
+      'images/heros/hero-image-sm.jpg' type('image/jpg')
     );
     background-image: -webkit-image-set(
-      'images/heros/hero-image.webp' type('image/webp'),
-      'images/heros/hero-image.jpg' type('image/jpg')
+      'images/heros/hero-image-sm.webp' type('image/webp'),
+      'images/heros/hero-image-sm.jpg' type('image/jpg')
     )
     ">
     <div class="hero__bg"></div>
@@ -73,7 +73,13 @@ const createHeadLine = () => `
             <source media="(min-width:900px)" srcset="images/heros/headline-lg-screen.png" type="image/png">
             <source media="(max-width:899px)" srcset="images/heros/headline-sm-screen.webp" type="image/webp">
             <source media="(max-width:899px)" srcset="images/heros/headline-sm-screen.png" type="image/png">
-            <img width="450px" height="300px" class="lazyload" data-src="images/heros/headline-sm-screen.webp" alt="OVERANT - Discover Restaurant">
+            <img 
+              width="450px" height="300px" 
+              class="lazyload" 
+              src="images/dummy-img.jpg"
+              data-src="images/heros/headline-sm-screen.webp" 
+              alt="OVERANT - Discover Restaurant"
+            >
           </picture>
           <figcaption>Image caption will be here</figcaption>
         </figure>

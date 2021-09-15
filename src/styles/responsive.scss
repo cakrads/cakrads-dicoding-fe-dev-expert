@@ -270,6 +270,9 @@
 }
 
 @media screen and (min-width: 900px) {
+  .hero {
+    background-image: url("../public/images/heros/hero-image.jpg") !important;
+  }
 
   .headline {
     margin-bottom: 40px;
